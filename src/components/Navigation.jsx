@@ -1,45 +1,65 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 function Navigation() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY
+      setIsScrolled(scrollPosition > 50)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   const handleWhatsApp = () => {
     window.open('https://wa.me/919876543210', '_blank')
   }
 
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md shadow-lg z-[100] transition-all duration-300">
+    <nav className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${
+      isScrolled 
+        ? 'bg-transparent' 
+        : 'bg-gray-50 backdrop-blur-md '
+    }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+        <div className="transition-all duration-300 py-2">
+          <div className={`flex justify-between items-center transition-all duration-300 h-20 ${
+            isScrolled 
+              ? 'bg-gray-50 rounded-2xl border border-gray-200 px-6 shadow-sm' 
+              : ''
+          }`}>
           {/* Logo */}
           <div className="flex items-center">
             <a href="#home" className="flex items-center">
               <img 
                 src="/krushi-logo.png" 
                 alt="Krushi Impex Logo" 
-                className="h-12 md:h-16 w-auto object-contain"
+                className="w-auto object-contain h-12 md:h-16 transition-all duration-300"
               />
             </a>
           </div>
           
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8">
-            <a href="#home" className="text-gray-700 hover:text-amber-600 px-3 py-2 text-sm font-medium transition-colors">
+          <div className="hidden md:flex items-center space-x-8 transition-all duration-300">
+            <a href="#home" className="text-gray-700 hover:text-amber-600 px-3 py-2 text-sm font-medium transition-all duration-300">
               Home
             </a>
-            <a href="#products" className="text-gray-700 hover:text-amber-600 px-3 py-2 text-sm font-medium transition-colors">
+            <a href="#products" className="text-gray-700 hover:text-amber-600 px-3 py-2 text-sm font-medium transition-all duration-300">
               Products
             </a>
-            <a href="#who-we-serve" className="text-gray-700 hover:text-amber-600 px-3 py-2 text-sm font-medium transition-colors">
+            <a href="#who-we-serve" className="text-gray-700 hover:text-amber-600 px-3 py-2 text-sm font-medium transition-all duration-300">
               Who We Serve
             </a>
-            <a href="#why-us" className="text-gray-700 hover:text-amber-600 px-3 py-2 text-sm font-medium transition-colors">
+            <a href="#why-us" className="text-gray-700 hover:text-amber-600 px-3 py-2 text-sm font-medium transition-all duration-300">
               Why Us
             </a>
-            <a href="#quality" className="text-gray-700 hover:text-amber-600 px-3 py-2 text-sm font-medium transition-colors">
+            <a href="#quality" className="text-gray-700 hover:text-amber-600 px-3 py-2 text-sm font-medium transition-all duration-300">
               Quality
             </a>
-            <a href="#contact" className="text-gray-700 hover:text-amber-600 px-3 py-2 text-sm font-medium transition-colors">
+            <a href="#contact" className="text-gray-700 hover:text-amber-600 px-3 py-2 text-sm font-medium transition-all duration-300">
               Contact
             </a>
             <button 
@@ -68,11 +88,16 @@ function Navigation() {
               </svg>
             </button>
           </div>
+          </div>
         </div>
 
         {/* Mobile Menu */}
         {menuOpen && (
-          <div className="md:hidden pb-4 animate-fade-in">
+          <div className={`md:hidden pb-4 animate-fade-in transition-all duration-300 ${
+            isScrolled 
+              ? 'mt-2 bg-white rounded-2xl border border-gray-200 px-4 shadow-sm' 
+              : ''
+          }`}>
             <div className="px-2 pt-2 pb-3 space-y-1">
               <a href="#home" onClick={() => setMenuOpen(false)} className="block px-3 py-2 text-gray-700 hover:bg-amber-50 hover:text-amber-600 rounded-md transition-colors">
                 Home

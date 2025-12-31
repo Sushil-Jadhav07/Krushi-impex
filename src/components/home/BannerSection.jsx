@@ -15,7 +15,7 @@ const BannerSection = ({
   }, []);
 
   return (
-    <section className="w-full px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
+    <section className="w-full px-4 sm:px-6 lg:px-8 py-8 lg:py-28">
       <div className="max-w-7xl mx-auto">
         {/* Banner Container with rounded corners */}
         <div 
@@ -80,7 +80,7 @@ const BannerSection = ({
 // Demo App
 export default function App() {
   return (
-    <div className=" bg-gray-50 mt-12">
+    <div className=" bg-gray-50">
       {/* Example with default props */}
       <BannerSection />
 

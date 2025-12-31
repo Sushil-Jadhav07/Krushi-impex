@@ -1,13 +1,16 @@
 import Navigation from '../components/Navigation'
-import BannerSection from '../components/BannerSection'
-import HeroSection from '../components/HeroSection'
-import ProductCategories from '../components/ProductCategories'
-import VelocityScroll from '../components/VelocityScroll'
-import SparksCarousel from '../components/SparksCarousel'
-import WhoWeServe from '../components/WhoWeServe'
-import WhyKrushiImpex from '../components/WhyKrushiImpex'
+import Navbar2 from '../components/Navbar2'
+import BannerSection from '../components/home/BannerSection'
+import HeroSection from '../components/home/HeroSection'
+import ProductCategories from '../components/home/ProductCategories'
+import VelocityScroll from '../components/home/VelocityScroll'
+import SparksCarousel from '../components/home/SparksCarousel'
+import AdvantagesSection from '../components/home/AdvantagesSection'
+import ValuesSection from '../components/home/ValuesSection'
+import { FeaturesSectionWithHoverEffects } from '../components/ui/feature-section-with-hover-effects'
+import { Testimonials } from '../components/ui/testimonials'
 import Footer from '../components/Footer'
-import { LandingAccordionItem } from '../components/LandingAccordionItem'
+import { LandingAccordionItem } from '../components/home/LandingAccordionItem'
 
 function Home() {
   const handleWhatsApp = () => {
@@ -16,7 +19,8 @@ function Home() {
 
   return (
     <div className="min-h-screen bg-white">
-      <Navigation />
+      {/* <Navigation /> */}
+      <Navbar2 />
       <BannerSection />
       <VelocityScroll 
         text="Velocity Scroll" 
@@ -26,9 +30,13 @@ function Home() {
       {/* <HeroSection /> */}
       <ProductCategories />
       <SparksCarousel />
-      <LandingAccordionItem />
-      <WhoWeServe />
-      <WhyKrushiImpex />
+      {/* <LandingAccordionItem /> */}
+      <section className="w-full px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 bg-white">
+        <FeaturesSectionWithHoverEffects />
+      </section>
+      <AdvantagesSection />
+      <ValuesSection />
+      <Testimonials />
       <Footer onWhatsAppClick={handleWhatsApp} />
     </div>
   )

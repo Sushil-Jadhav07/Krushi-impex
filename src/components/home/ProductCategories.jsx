@@ -80,7 +80,7 @@ const CategoryCard = ({ category, isHovered, onHover, onLeave }) => {
           <div className={`flex-1 flex flex-col items-center justify-center transition-all duration-500 ${
             isHovered ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'
           }`}>
-            <h3 className="text-3xl sm:text-4xl md:text-5xl font-light text-white text-center">
+            <h3 className="text-3xl px-4 sm:text-4xl md:text-5xl font-light text-white text-center">
               {category.title}
             </h3>
             {category.subtitle && (
@@ -91,7 +91,7 @@ const CategoryCard = ({ category, isHovered, onHover, onLeave }) => {
           </div>
           
           {/* Description Card - Shows on hover */}
-          <div className={`absolute inset-0 p-6 md:p-10 flex flex-col justify-between transition-all duration-500 ${
+          <div className={`absolute inset-0 p-6 md:p-16 flex flex-col justify-between transition-all duration-500 ${
             isHovered ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8 pointer-events-none'
           }`}>
             <div>
