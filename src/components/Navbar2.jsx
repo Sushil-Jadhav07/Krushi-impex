@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 
 const MenuIcon = ({ isOpen }) => (
   <div className="w-6 h-5 flex flex-col justify-between">
@@ -14,12 +15,13 @@ const PremiumNavbar = () => {
   const navRef = useRef(null);
 
   const navLinks = [
-    { label: "Home", href: "#home" },
+    { label: "Home", href: "/" },
+    { label: "About", href: "/about" },
     { label: "Products", href: "#products" },
     { label: "Who We Serve", href: "#who-we-serve" },
     { label: "Why Us", href: "#why-us" },
     { label: "Quality", href: "#quality" },
-    { label: "Contact", href: "#contact" }
+    { label: "Contact", href: "/contact" }
   ];
 
   useEffect(() => {
@@ -92,8 +94,8 @@ const PremiumNavbar = () => {
           }}
         >
           <div className="flex items-center justify-between">
-            <a
-              href="#home"
+            <Link
+              to="/"
               className="flex items-center z-10 transition-all duration-300 hover:opacity-80"
             >
               <img 
@@ -102,18 +104,27 @@ const PremiumNavbar = () => {
                 className="h-12 md:h-16 w-auto object-contain"
                 style={{ height: scrolled ? '48px' : '64px' }}
               />
-            </a>
+            </Link>
 
             <div className="hidden md:flex items-center gap-8">
-              {navLinks.map((link, index) => (
-                <a
-                  key={index}
-                  href={link.href}
-                  className="nav-link text-base font-medium text-gray-700 hover:text-gray-900 transition-colors duration-300"
-                >
-                  {link.label}
-                </a>
-              ))}
+              {navLinks.map((link, index) => {
+                // Use Link for routes, anchor for hash links
+                const isRoute = link.href.startsWith('/');
+                const Component = isRoute ? Link : 'a';
+                const props = isRoute 
+                  ? { to: link.href }
+                  : { href: link.href };
+                
+                return (
+                  <Component
+                    key={index}
+                    {...props}
+                    className="nav-link text-base font-medium text-gray-700 hover:text-gray-900 transition-colors duration-300"
+                  >
+                    {link.label}
+                  </Component>
+                );
+              })}
             </div>
 
             <div className="hidden md:flex items-center gap-4">
@@ -156,16 +167,24 @@ const PremiumNavbar = () => {
           onClick={(e) => e.stopPropagation()}
         >
           <div className="flex flex-col gap-4 mb-6">
-            {navLinks.map((link, index) => (
-              <a
-                key={index}
-                href={link.href}
-                className="text-base font-medium text-gray-700 hover:text-green-600 transition-colors duration-300 py-2"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {link.label}
-              </a>
-            ))}
+            {navLinks.map((link, index) => {
+              const isRoute = link.href.startsWith('/');
+              const Component = isRoute ? Link : 'a';
+              const props = isRoute 
+                ? { to: link.href }
+                : { href: link.href };
+              
+              return (
+                <Component
+                  key={index}
+                  {...props}
+                  className="text-base font-medium text-gray-700 hover:text-green-600 transition-colors duration-300 py-2"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {link.label}
+                </Component>
+              );
+            })}
           </div>
 
           <a

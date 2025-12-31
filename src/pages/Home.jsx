@@ -9,6 +9,7 @@ import AdvantagesSection from '../components/home/AdvantagesSection'
 import ValuesSection from '../components/home/ValuesSection'
 import { FeaturesSectionWithHoverEffects } from '../components/ui/feature-section-with-hover-effects'
 import { Testimonials } from '../components/ui/testimonials'
+import PremiumCTASection from '../components/home/Cta'
 import Footer from '../components/Footer'
 import { LandingAccordionItem } from '../components/home/LandingAccordionItem'
 
@@ -37,6 +38,7 @@ function Home() {
       <AdvantagesSection />
       <ValuesSection />
       <Testimonials />
+      <PremiumCTASection />
       <Footer onWhatsAppClick={handleWhatsApp} />
     </div>
   )

@@ -93,7 +93,7 @@ function Testimonials({
           backgroundSize: '24px 24px',
         }}
       />
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="container w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col gap-10">
           <h2 className="text-3xl md:text-4xl lg:text-5xl tracking-tight font-bold text-gray-800 text-center">
             {title}
