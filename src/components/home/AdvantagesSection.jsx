@@ -40,7 +40,7 @@ const FeatureItem = ({ title, index, isActive, onClick }) => {
       {/* Active indicator line */}
       <div 
         className={`absolute left-0 top-0 bottom-0 w-1 rounded-full transition-all duration-500 ${
-          isActive ? 'bg-blue-600 opacity-100' : 'bg-gray-300 opacity-0 group-hover:opacity-50'
+          isActive ? 'bg-[#2C328C] opacity-100' : 'bg-gray-300 opacity-0 group-hover:opacity-50'
         }`}
         style={{
           transform: isActive ? 'scaleY(1)' : 'scaleY(0.5)',
@@ -58,7 +58,7 @@ const FeatureItem = ({ title, index, isActive, onClick }) => {
         }}
       >
         <h3 
-          className={`text-xl sm:text-2xl font-semibold transition-colors duration-300 ${
+          className={`heading-xs transition-colors duration-300 ${
             isActive ? 'text-gray-900' : 'text-gray-600 group-hover:text-gray-800'
           }`}
         >
@@ -68,7 +68,7 @@ const FeatureItem = ({ title, index, isActive, onClick }) => {
 
       {/* Hover background */}
       <div 
-        className="absolute inset-0 bg-blue-50/50 rounded-lg -z-10 transition-opacity duration-300"
+          className="absolute inset-0 bg-[#F4F2F2]/50 rounded-lg -z-10 transition-opacity duration-300"
         style={{
           opacity: isActive ? 1 : 0
         }}
@@ -123,7 +123,7 @@ const AdvantagesSection = ({
   }, []);
 
   return (
-    <section className="w-full py-12 sm:py-16 lg:py-24 px-4 sm:px-6 lg:px-8 bg-white">
+     <section className="w-full py-12 sm:py-16 lg:py-24 px-4 sm:px-6 lg:px-8 bg-[#F4F2F2]">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-12 sm:mb-16">
@@ -136,13 +136,13 @@ const AdvantagesSection = ({
               transition: 'all 0.6s cubic-bezier(0.16, 1, 0.3, 1)'
             }}
           >
-            <div className="w-2 h-2 rounded-full bg-blue-600"></div>
+             <div className="w-2 h-2 rounded-full bg-[#2C328C]"></div>
             <span className="uppercase tracking-wider font-medium">{sectionLabel}</span>
           </div>
 
           {/* Main Heading */}
           <h2 
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight max-w-4xl mx-auto mb-6"
+            className="heading-lg max-w-4xl mx-auto mb-6"
             style={{
               opacity: isVisible ? 1 : 0,
               transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
@@ -150,13 +150,13 @@ const AdvantagesSection = ({
             }}
           >
             {mainHeading.part1}
-            <span className="text-blue-600">{mainHeading.highlight}</span>
+             <span className="text-[#2C328C]">{mainHeading.highlight}</span>
             {mainHeading.part2}
           </h2>
 
           {/* Description */}
           <p 
-            className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto mb-8"
+            className="body-sm text-gray-600 max-w-3xl mx-auto mb-8"
             style={{
               opacity: isVisible ? 1 : 0,
               transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
@@ -226,13 +226,13 @@ const AdvantagesSection = ({
               ))}
 
               {/* Decorative gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/10 via-transparent to-purple-600/10 pointer-events-none"></div>
+               <div className="absolute inset-0 bg-gradient-to-tr from-[#2C328C]/10 via-transparent to-[#2C328C]/5 pointer-events-none"></div>
             </div>
 
             {/* Decorative floating elements */}
             <div className="absolute -z-10 -inset-8">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
-              <div className="absolute bottom-0 left-0 w-40 h-40 bg-purple-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+               <div className="absolute top-0 right-0 w-32 h-32 bg-[#2C328C]/20 rounded-full blur-3xl animate-premium-float"></div>
+               <div className="absolute bottom-0 left-0 w-40 h-40 bg-[#2C328C]/10 rounded-full blur-3xl animate-premium-float" style={{ animationDelay: '1s' }}></div>
             </div>
 
             {/* Progress indicators */}

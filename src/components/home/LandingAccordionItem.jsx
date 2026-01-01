@@ -81,7 +81,7 @@ export function LandingAccordionItem() {
           
           {/* Left Side: Text Content */}
           <div className="w-full md:w-1/2 text-center md:text-left">
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 leading-tight tracking-tighter">
+            <h1 className="heading-lg">
             Our Range of Products
 
             </h1>

@@ -26,7 +26,7 @@ const WhyKrushiImpex = ({
           <div className="relative order-1 lg:order-1 space-y-6 sm:space-y-8">
             {/* Title */}
             <h2 
-              className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight transition-all duration-700 ease-out ${
+              className={`heading-lg transition-all duration-700 ease-out ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
               }`}
               style={{ transitionDelay: '200ms' }}
@@ -54,7 +54,7 @@ const WhyKrushiImpex = ({
               {features.map((feature, index) => (
                 <li key={index} className="flex items-center gap-3">
                   {/* Checkmark Icon */}
-                  <div className="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 bg-green-500 rounded-full flex items-center justify-center">
+                  <div className="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 bg-[#F16222] rounded-full flex items-center justify-center">
                     <svg
                       className="w-3 h-3 sm:w-4 sm:h-4 text-white"
                       fill="none"

@@ -84,7 +84,7 @@ const ValueCard = ({ icon: Icon, title, description, index }) => {
     >
       {/* Animated background glow on hover */}
       <div 
-        className="absolute -inset-2 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-2xl opacity-0 blur-xl transition-opacity duration-500"
+        className="absolute -inset-2 bg-gradient-to-r from-[#2C328C] via-[#2C328C] to-[#2C328C] rounded-2xl opacity-0 blur-xl transition-opacity duration-500"
         style={{
           opacity: isHovered ? 0.3 : 0
         }}
@@ -101,7 +101,7 @@ const ValueCard = ({ icon: Icon, title, description, index }) => {
         >
           {/* Floating background circles */}
           <div 
-            className="absolute inset-0 bg-blue-500 rounded-xl opacity-20 blur-md"
+            className="absolute inset-0 bg-[#2C328C] rounded-xl opacity-20 blur-md"
             style={{
               transform: isHovered ? 'scale(1.4)' : 'scale(1)',
               transition: 'transform 0.4s ease-out'
@@ -109,7 +109,7 @@ const ValueCard = ({ icon: Icon, title, description, index }) => {
           ></div>
           
           <div 
-            className="relative bg-gradient-to-br from-blue-500 to-blue-600 p-3 rounded-xl shadow-lg"
+            className="relative bg-gradient-to-br from-[#2C328C] to-[#2C328C] p-3 rounded-xl shadow-lg"
             style={{
               boxShadow: isHovered ? '0 10px 30px rgba(59, 130, 246, 0.5)' : '0 4px 10px rgba(59, 130, 246, 0.3)',
               transition: 'box-shadow 0.3s ease-out'
@@ -130,13 +130,13 @@ const ValueCard = ({ icon: Icon, title, description, index }) => {
           {isHovered && (
             <>
               <div 
-                className="absolute top-0 right-0 w-2 h-2 bg-blue-400 rounded-full"
+                 className="absolute top-0 right-0 w-2 h-2 bg-[#2C328C] rounded-full"
                 style={{
                   animation: 'orbit 2s linear infinite'
                 }}
               ></div>
               <div 
-                className="absolute bottom-0 left-0 w-2 h-2 bg-purple-400 rounded-full"
+                 className="absolute bottom-0 left-0 w-2 h-2 bg-[#2C328C] rounded-full"
                 style={{
                   animation: 'orbit 2s linear infinite',
                   animationDelay: '1s'
@@ -149,7 +149,7 @@ const ValueCard = ({ icon: Icon, title, description, index }) => {
         {/* Content */}
         <div className="flex-1 min-w-0">
           <h3 
-            className="text-lg sm:text-xl font-semibold text-gray-900 mb-2"
+            className="heading-md mb-2"
             style={{
               transform: isHovered ? 'translateX(5px)' : 'translateX(0)',
               transition: 'transform 0.3s ease-out'
@@ -170,7 +170,7 @@ const ValueCard = ({ icon: Icon, title, description, index }) => {
 
         {/* Arrow indicator that appears on hover */}
         <div 
-          className="absolute right-4 top-1/2 -translate-y-1/2 text-blue-500"
+          className="absolute right-4 top-1/2 -translate-y-1/2 text-[#2C328C]"
           style={{
             opacity: isHovered ? 1 : 0,
             transform: isHovered ? 'translateX(0)' : 'translateX(-10px)',
@@ -223,7 +223,7 @@ const AboutValuesSection = ({
   }, []);
 
   return (
-    <section className="w-full py-12 sm:py-16 lg:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 via-white to-blue-50">
+     <section className="w-full py-12 sm:py-16 lg:py-24 px-4 sm:px-6 lg:px-8 bg-[#F4F2F2]">
       <style>{`
         @keyframes orbit {
           0% {
@@ -258,14 +258,14 @@ const AboutValuesSection = ({
               }}
             >
               <div className="flex items-center gap-2 text-sm text-gray-600 mb-2">
-                <div className="w-8 h-px bg-gradient-to-r from-blue-500 to-transparent"></div>
+                 <div className="w-8 h-px bg-gradient-to-r from-[#2C328C] to-transparent"></div>
                 <span className="uppercase tracking-wider font-medium">{sectionTitle}</span>
               </div>
             </div>
 
             {/* Main Heading */}
             <h2 
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-4 sm:mb-6"
+              className="heading-lg mb-4 sm:mb-6"
               style={{
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
@@ -314,11 +314,11 @@ const AboutValuesSection = ({
             {/* Decorative floating elements */}
             <div className="hidden lg:block relative mt-12">
               <div 
-                className="absolute w-20 h-20 bg-blue-500/10 rounded-full blur-2xl"
+                 className="absolute w-20 h-20 bg-[#2C328C]/10 rounded-full blur-2xl"
                 style={{ animation: 'float 3s ease-in-out infinite' }}
               ></div>
               <div 
-                className="absolute w-32 h-32 bg-purple-500/10 rounded-full blur-2xl left-20 top-10"
+                 className="absolute w-32 h-32 bg-[#2C328C]/10 rounded-full blur-2xl left-20 top-10"
                 style={{ animation: 'float 4s ease-in-out infinite', animationDelay: '0.5s' }}
               ></div>
             </div>

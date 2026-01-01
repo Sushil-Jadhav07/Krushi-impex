@@ -2,7 +2,306 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ============================================
+   KRUSHI IMPEX BRAND FONTS
+   ============================================ */
+
+/* Conthrax - Primary Heading Font */
+@font-face {
+  font-family: 'Conthrax';
+  src: url('/fonts/Demo-Conthrax/Fontspring-DEMO-conthrax-lt.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Conthrax';
+  src: url('/fonts/Demo-Conthrax/Fontspring-DEMO-conthrax-rg.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Conthrax';
+  src: url('/fonts/Demo-Conthrax/Fontspring-DEMO-conthrax-sb.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Conthrax';
+  src: url('/fonts/Demo-Conthrax/Fontspring-DEMO-conthrax-bd.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Bahnschrift - Primary Body Font */
+@font-face {
+  font-family: 'Bahnschrift';
+  src: url('/fonts/Bahnschrift-Font-Family/BAHNSCHRIFT.TTF') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bahnschrift';
+  src: url('/fonts/Bahnschrift-Font-Family/BAHNSCHRIFT 1.TTF') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bahnschrift';
+  src: url('/fonts/Bahnschrift-Font-Family/BAHNSCHRIFT 2.TTF') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bahnschrift';
+  src: url('/fonts/Bahnschrift-Font-Family/BAHNSCHRIFT 3.TTF') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bahnschrift';
+  src: url('/fonts/Bahnschrift-Font-Family/BAHNSCHRIFT 4.TTF') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bahnschrift';
+  src: url('/fonts/Bahnschrift-Font-Family/BAHNSCHRIFT 5.TTF') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bahnschrift';
+  src: url('/fonts/Bahnschrift-Font-Family/BAHNSCHRIFT 6.TTF') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bahnschrift';
+  src: url('/fonts/Bahnschrift-Font-Family/BAHNSCHRIFT 7.TTF') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bahnschrift';
+  src: url('/fonts/Bahnschrift-Font-Family/BAHNSCHRIFT 8.TTF') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ============================================
+   KRUSHI IMPEX BRAND COLORS
+   ============================================ */
+:root {
+  --brand-primary-blue: #2C328C;
+  --brand-primary-orange: #F16222;
+  --brand-warm-orange-red: #D95C2F;
+  --brand-off-white: #F4F2F2;
+  --brand-black: #000000;
+  
+  /* Color Usage Ratio: 60/30/10 */
+  /* 60% Primary Blue, 30% Off White, 10% Primary Orange */
+}
+
+/* Global Typography Setup */
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Bahnschrift', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    color: var(--brand-black);
+    background-color: var(--brand-off-white);
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.6;
+  }
+
+  h1 {
+    font-family: 'Conthrax', sans-serif;
+    font-size: 135px;
+    font-weight: 600;
+    color: var(--brand-primary-blue);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+
+  h2 {
+    font-family: 'Conthrax',  sans-serif;
+    font-size: 105px;
+    font-weight: 600;
+    color: var(--brand-primary-blue);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+
+  h3 {
+    font-family: 'Conthrax',  sans-serif;
+    font-size: 60px;
+    font-weight: 600;
+    color: var(--brand-primary-blue);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+
+  h4 {
+    font-family: 'Conthrax',  sans-serif;
+    font-size: 45px;
+    font-weight: 600;
+    color: var(--brand-primary-blue);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+
+  h5 {
+    font-family: 'Conthrax', sans-serif;
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--brand-primary-blue);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+
+  h6 {
+    font-family: 'Conthrax', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--brand-primary-blue);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+}
+
 @layer utilities {
+  /* Typography Utility Classes */
+  /* Heading Utilities - Brand Specifications */
+  .heading-lg {
+    font-family: 'Conthrax', sans-serif;
+    font-size: 42px;
+    font-weight: 600;
+    color: var(--brand-primary-blue);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+
+  .heading-md {
+    font-family: 'Conthrax', sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--brand-primary-blue);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+
+  .heading-sm {
+    font-family: 'Conthrax', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--brand-primary-blue);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+
+  .heading-xs {
+    font-family: 'Conthrax', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--brand-primary-blue);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+
+  /* Body Utilities */
+  .body-xl {
+    font-family: 'Bahnschrift', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--brand-black);
+    line-height: 1.6;
+  }
+  .body-lg {
+    font-family: 'Bahnschrift', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--brand-black);
+    line-height: 1.6;
+  }
+
+  .body-md {
+    font-family: 'Bahnschrift', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--brand-black);
+    line-height: 1.6;
+  }
+
+  .body-sm {
+    font-family: 'Bahnschrift', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--brand-black);
+    line-height: 1.5;
+  }
+
+  .body-xs {
+    font-family: 'Bahnschrift', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--brand-black);
+    line-height: 1.5;
+  }
+
+  /* Brand Gradient Utilities */
+  .bg-brand-gradient {
+    background: linear-gradient(to right, var(--brand-primary-orange), var(--brand-primary-blue));
+  }
+
+  .bg-brand-gradient-vertical {
+    background: linear-gradient(to bottom, var(--brand-primary-orange), var(--brand-primary-blue));
+  }
+
+  .bg-brand-gradient-diagonal {
+    background: linear-gradient(135deg, var(--brand-primary-orange), var(--brand-primary-blue));
+  }
+
+  .text-brand-gradient {
+    background: linear-gradient(to right, var(--brand-primary-orange), var(--brand-primary-blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
   /* Smooth scroll */
   html {
     scroll-behavior: smooth;
@@ -66,13 +365,28 @@
     }
   }
 
-  /* Pulse glow */
-  @keyframes pulseGlow {
+  /* Premium floating animation */
+  @keyframes premiumFloat {
     0%, 100% {
-      box-shadow: 0 0 20px rgba(251, 191, 36, 0.4);
+      transform: translateY(0px) translateX(0px);
     }
-    50% {
-      box-shadow: 0 0 40px rgba(251, 191, 36, 0.8);
+    33% {
+      transform: translateY(-10px) translateX(5px);
+    }
+    66% {
+      transform: translateY(5px) translateX(-5px);
+    }
+  }
+
+  /* Premium scroll reveal */
+  @keyframes scrollReveal {
+    from {
+      opacity: 0;
+      transform: translateY(40px) scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
     }
   }
 
@@ -96,8 +410,12 @@
     animation: float 3s ease-in-out infinite;
   }
 
-  .animate-pulse-glow {
-    animation: pulseGlow 2s ease-in-out infinite;
+  .animate-premium-float {
+    animation: premiumFloat 6s ease-in-out infinite;
+  }
+
+  .animate-scroll-reveal {
+    animation: scrollReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
 
   /* Intersection Observer animation classes */

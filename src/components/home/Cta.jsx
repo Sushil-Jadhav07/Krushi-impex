@@ -53,7 +53,7 @@ const PremiumCTASection = () => {
 
         .btn-primary:hover {
           transform: translateY(-2px);
-          box-shadow: 0 10px 25px rgba(0, 73, 175, 0.3);
+            box-shadow: 0 10px 25px rgba(44, 50, 140, 0.3);
         }
 
         .btn-secondary {
@@ -68,7 +68,7 @@ const PremiumCTASection = () => {
 
       <section
         ref={sectionRef}
-        className="bg-gray-50 relative w-full flex items-center justify-center px-4 py-20"
+          className="bg-[#F4F2F2] relative w-full flex items-center justify-center px-4 py-20"
       >
         {/* Main Container */}
         <div className="relative w-full max-w-6xl mx-auto">
@@ -85,22 +85,22 @@ const PremiumCTASection = () => {
               </div>
 
               {/* Headline */}
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+              <h2 className="heading-lg mb-6">
                 Let's Power Your
                 <br />
-                <span className="text-[#0049AF]">
+                <span className="text-[#2C328C]">
                   Celebrations
                 </span>
               </h2>
 
               {/* Subtext */}
-              <p className="text-lg md:text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
+              <p className="body-lg mb-10 max-w-2xl mx-auto">
                 Looking for a reliable celebration product importer and supplier?
               </p>
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <button className="btn-primary w-full sm:w-auto px-8 py-4 bg-[#0049AF] text-white font-semibold rounded-full text-base md:text-lg">
+                 <button className="btn-primary w-full sm:w-auto px-8 py-4 bg-[#F16222] text-white font-semibold rounded-full text-base md:text-lg hover:bg-[#D95C2F]">
                   Get a Quote
                 </button>
 

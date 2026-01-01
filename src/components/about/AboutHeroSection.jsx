@@ -43,7 +43,7 @@ const AboutHeroSection = () => {
             <div className="relative order-2 lg:order-1 h-[400px] md:h-[500px] lg:h-[600px]">
               <div className="relative w-full h-full rounded-lg overflow-hidden">
                 {/* Placeholder Image with gradient */}
-                <div className="absolute inset-0 bg-gradient-to-br from-[#0049AF] via-[#0066FF] to-[#4A148C]">
+                 <div className="absolute inset-0 bg-gradient-to-br from-[#2C328C] via-[#2C328C] to-[#2C328C] opacity-10">
                   <div className="w-full h-full flex items-center justify-center">
                     <div className="text-center">
                       <div className="w-32 h-32 md:w-40 md:h-40 mx-auto mb-4 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm border border-white/20">
@@ -99,14 +99,14 @@ const AboutHeroSection = () => {
                     transition: 'all 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.3s'
                   }}
                 >
-                  <span className="text-amber-600 text-sm md:text-base font-semibold uppercase tracking-wider">
+                   <span className="text-[#F16222] text-sm md:text-base font-semibold uppercase tracking-wider">
                     WELCOME TO KRUSHI IMPEX
                   </span>
                 </div>
 
                 {/* Main Headline */}
                 <h2 
-                  className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-6 leading-tight"
+                  className="heading-lg mb-6"
                   style={{
                     opacity: isVisible ? 1 : 0,
                     transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
@@ -119,7 +119,7 @@ const AboutHeroSection = () => {
 
                 {/* Description Paragraph */}
                 <p 
-                  className="text-gray-600 text-base md:text-lg leading-relaxed mb-8"
+                  className="body-lg mb-8"
                   style={{
                     opacity: isVisible ? 1 : 0,
                     transform: isVisible ? 'translateY(0)' : 'translateY(20px)',

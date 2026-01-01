@@ -60,10 +60,10 @@ export function FeaturesSectionWithHoverEffects({
     <div className="w-full max-w-7xl mx-auto">
       {/* Title and Subtitle Section */}
       <div className="text-center mb-12 sm:mb-16 lg:mb-20 px-4">
-        <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-4 sm:mb-6 tracking-tight">
+        <h2 className="heading-lg mb-4 sm:mb-6">
           {title}
         </h2>
-        <p className="text-lg sm:text-xl md:text-2xl text-gray-600 font-medium max-w-3xl mx-auto">
+        <p className="body-lg max-w-3xl mx-auto">
           {subtitle}
         </p>
       </div>
@@ -102,7 +102,7 @@ const Feature = ({
         <Icon className="w-6 h-6" />
       </div>
       <div className="text-lg font-bold mb-2 relative z-10 px-10">
-        <div className="absolute left-0 inset-y-0 h-6 group-hover/feature:h-8 w-1 rounded-tr-full rounded-br-full bg-gray-300 group-hover/feature:bg-blue-500 transition-all duration-200 origin-center" />
+        <div className="absolute left-0 inset-y-0 h-6 group-hover/feature:h-8 w-1 rounded-tr-full rounded-br-full bg-gray-300 group-hover/feature:bg-[#2C328C] transition-all duration-200 origin-center" />
         <span className="group-hover/feature:translate-x-2 transition duration-200 inline-block text-gray-800">
           {title}
         </span>

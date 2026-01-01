@@ -98,7 +98,7 @@ const ContactSection = () => {
         }
 
         .gradient-text {
-          background: linear-gradient(135deg, #0049AF 0%, #0066FF 50%, #4A148C 100%);
+          background: linear-gradient(135deg, #2C328C 0%, #2C328C 50%, #2C328C 100%);
           background-size: 200% 200%;
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
@@ -123,15 +123,15 @@ const ContactSection = () => {
         {/* Decorative Background Elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div 
-            className="absolute top-20 left-10 w-72 h-72 bg-[#0049AF]/5 rounded-full blur-3xl"
+            className="absolute top-20 left-10 w-72 h-72 bg-[#2C328C]/5 rounded-full blur-3xl"
             style={{ animation: 'pulse 4s ease-in-out infinite' }}
           ></div>
           <div 
-            className="absolute bottom-20 right-10 w-96 h-96 bg-[#0066FF]/5 rounded-full blur-3xl"
+            className="absolute bottom-20 right-10 w-96 h-96 bg-[#2C328C]/5 rounded-full blur-3xl"
             style={{ animation: 'pulse 5s ease-in-out infinite 1s' }}
           ></div>
           <div 
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#4A148C]/3 rounded-full blur-3xl"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#2C328C]/3 rounded-full blur-3xl"
             style={{ animation: 'pulse 6s ease-in-out infinite 2s' }}
           ></div>
         </div>
@@ -139,7 +139,7 @@ const ContactSection = () => {
         {/* Floating Icons */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div 
-            className="absolute top-32 left-20 text-[#0049AF]/10"
+            className="absolute top-32 left-20 text-[#2C328C]/10"
             style={{ animation: 'float 6s ease-in-out infinite' }}
           >
             <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -147,7 +147,7 @@ const ContactSection = () => {
             </svg>
           </div>
           <div 
-            className="absolute bottom-32 right-20 text-[#0066FF]/10"
+            className="absolute bottom-32 right-20 text-[#2C328C]/10"
             style={{ animation: 'float 7s ease-in-out infinite 1s' }}
           >
             <svg className="w-20 h-20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -155,7 +155,7 @@ const ContactSection = () => {
             </svg>
           </div>
           <div 
-            className="absolute top-1/3 right-32 text-[#4A148C]/10"
+            className="absolute top-1/3 right-32 text-[#2C328C]/10"
             style={{ animation: 'float 8s ease-in-out infinite 2s' }}
           >
             <svg className="w-14 h-14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -175,7 +175,7 @@ const ContactSection = () => {
             }}
           >
             <div className="inline-flex items-center gap-2 px-6 py-2.5 bg-white/80 backdrop-blur-sm border border-gray-200 rounded-full shadow-lg">
-              <div className="w-2 h-2 bg-[#0049AF] rounded-full animate-pulse"></div>
+              <div className="w-2 h-2 bg-[#2C328C] rounded-full animate-pulse"></div>
               <span className="text-sm font-semibold text-gray-700 uppercase tracking-wider">
                 Get In Touch
               </span>
@@ -190,11 +190,11 @@ const ContactSection = () => {
               transition: 'all 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s'
             }}
           >
-            <h1 className="text-4xl md:text-5xl  font-bold mb-8 text-center" style={{ lineHeight: '1.15' }}>
-              <span className="block text-gray-900 mb-2">
+            <h1 className="heading-lg mb-8 text-center">
+              <span className="block mb-2">
                 Looking for bulk celebration products,
               </span>
-              <span className="block text-gray-900 mb-2">
+              <span className="block mb-2">
                 trending party items, or
               </span>
               <span className="block gradient-text">
@@ -211,7 +211,7 @@ const ContactSection = () => {
               transition: 'all 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s'
             }}
           >
-            <p className="text-lg md:text-xl text-gray-600 font-medium text-center max-w-3xl mx-auto leading-relaxed">
+            <p className="body-lg text-center max-w-3xl mx-auto">
               Connect with us and let's discuss your requirements
             </p>
           </div>
@@ -225,7 +225,7 @@ const ContactSection = () => {
               transition: 'all 1s cubic-bezier(0.16, 1, 0.3, 1) 0.4s'
             }}
           >
-            <div className="w-24 h-1 bg-gradient-to-r from-transparent via-[#0049AF] to-transparent rounded-full"></div>
+            <div className="w-24 h-1 bg-gradient-to-r from-transparent via-[#2C328C] to-transparent rounded-full"></div>
           </div>
 
          
@@ -235,7 +235,7 @@ const ContactSection = () => {
       {/* Contact Form Section */}
       <section 
         ref={sectionRef}
-        className="w-full py-16 md:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 via-white to-blue-50"
+         className="w-full py-16 md:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-[#F4F2F2]"
       >
       <div className="max-w-7xl mx-auto">
         {/* Main Grid */}
@@ -251,7 +251,7 @@ const ContactSection = () => {
           >
             {/* Contact Details Header */}
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+              <h2 className="heading-md mb-8">
                 CONTACT DETAILS
               </h2>
               
@@ -259,14 +259,14 @@ const ContactSection = () => {
                 {/* Founder Info */}
                 <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-[#0049AF] rounded-full flex items-center justify-center flex-shrink-0">
+                     <div className="w-12 h-12 bg-[#2C328C] rounded-full flex items-center justify-center flex-shrink-0">
                       <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                       </svg>
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-gray-900 mb-1">Mehul Shah</h3>
-                      <p className="text-gray-600">Founder, Krushi Impex</p>
+                      <h3 className="heading-md text-base mb-1">Mehul Shah</h3>
+                      <p className="body-md">Founder, Krushi Impex</p>
                     </div>
                   </div>
                 </div>
@@ -277,14 +277,14 @@ const ContactSection = () => {
                     onClick={handleWhatsApp}
                     className="w-full flex items-center gap-4 text-left group"
                   >
-                    <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                     <div className="w-12 h-12 bg-[#F16222] rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
                       <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
                       </svg>
                     </div>
                     <div>
                       <p className="text-sm text-gray-500 mb-1">WhatsApp</p>
-                      <p className="text-lg font-semibold text-gray-900 group-hover:text-[#0049AF] transition-colors">
+                      <p className="text-lg font-semibold text-gray-900 group-hover:text-[#2C328C] transition-colors">
                         +91 7666416997
                       </p>
                     </div>
@@ -297,14 +297,14 @@ const ContactSection = () => {
                     onClick={handleEmail}
                     className="w-full flex items-center gap-4 text-left group"
                   >
-                    <div className="w-12 h-12 bg-[#0049AF] rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                     <div className="w-12 h-12 bg-[#2C328C] rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
                       <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                       </svg>
                     </div>
                     <div>
                       <p className="text-sm text-gray-500 mb-1">Email</p>
-                      <p className="text-lg font-semibold text-[#0049AF] underline group-hover:text-[#0066FF] transition-colors">
+                      <p className="text-lg font-semibold text-[#2C328C] underline group-hover:text-[#F16222] transition-colors">
                         krushiimpex@gmail.com
                       </p>
                     </div>
@@ -314,7 +314,7 @@ const ContactSection = () => {
                 {/* WeChat ID */}
                 <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center flex-shrink-0">
+                     <div className="w-12 h-12 bg-[#F16222] rounded-full flex items-center justify-center flex-shrink-0">
                       <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 0 0 .167-.054l1.903-1.114a.864.864 0 0 1 .717-.098 10.16 10.16 0 0 0 2.837.403c.276 0 .543-.027.811-.042-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.598-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178 1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18zm11.041-3.803c-4.196 0-7.598 3.362-7.598 7.498 0 2.122.918 4.024 2.369 5.344a.59.59 0 0 1 .214.665l-.39 1.481c-.019.07-.048.141-.048.212 0 .163.13.295.29.295a.326.326 0 0 0 .167-.054l1.903-1.113a.864.864 0 0 1 .718-.099c.91.151 1.84.227 2.785.227 4.196 0 7.598-3.362 7.598-7.498 0-4.137-3.402-7.499-7.598-7.499zm-2.836 4.534c.519 0 .94.427.94.953a.948.948 0 0 1-.94.952.948.948 0 0 1-.94-.952c0-.526.421-.953.94-.953zm-4.806 0c.519 0 .94.427.94.953a.948.948 0 0 1-.94.952.948.948 0 0 1-.94-.952c0-.526.421-.953.94-.953z"/>
                       </svg>
@@ -339,10 +339,10 @@ const ContactSection = () => {
             }}
           >
             <div className="mb-6">
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+              <h2 className="heading-md mb-2">
                 CONTACT FORM
               </h2>
-              <p className="text-gray-600 text-sm md:text-base">Fill out the form below and we'll get back to you soon.</p>
+              <p className="body-md">Fill out the form below and we'll get back to you soon.</p>
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-4">
@@ -359,7 +359,7 @@ const ContactSection = () => {
                     value={formData.fullName}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0049AF] focus:border-transparent transition-all duration-300 outline-none text-sm"
+                    className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2C328C] focus:border-transparent transition-all duration-300 outline-none text-sm"
                     placeholder="Enter your full name"
                   />
                 </div>
@@ -375,7 +375,7 @@ const ContactSection = () => {
                     value={formData.companyName}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0049AF] focus:border-transparent transition-all duration-300 outline-none text-sm"
+                    className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2C328C] focus:border-transparent transition-all duration-300 outline-none text-sm"
                     placeholder="Enter your company name"
                   />
                 </div>
@@ -394,7 +394,7 @@ const ContactSection = () => {
                     value={formData.phone}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0049AF] focus:border-transparent transition-all duration-300 outline-none text-sm"
+                    className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2C328C] focus:border-transparent transition-all duration-300 outline-none text-sm"
                     placeholder="Enter your phone number"
                   />
                 </div>
@@ -410,7 +410,7 @@ const ContactSection = () => {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0049AF] focus:border-transparent transition-all duration-300 outline-none text-sm"
+                    className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2C328C] focus:border-transparent transition-all duration-300 outline-none text-sm"
                     placeholder="Enter your email address"
                   />
                 </div>
@@ -428,7 +428,7 @@ const ContactSection = () => {
                   onChange={handleInputChange}
                   required
                   rows={3}
-                  className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0049AF] focus:border-transparent transition-all duration-300 outline-none resize-none text-sm"
+                  className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2C328C] focus:border-transparent transition-all duration-300 outline-none resize-none text-sm"
                   placeholder="Describe your product requirements"
                 />
               </div>
@@ -445,7 +445,7 @@ const ContactSection = () => {
                   value={formData.estimatedQuantity}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0049AF] focus:border-transparent transition-all duration-300 outline-none text-sm"
+                  className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2C328C] focus:border-transparent transition-all duration-300 outline-none text-sm"
                   placeholder="Enter estimated quantity"
                 />
               </div>
@@ -453,7 +453,7 @@ const ContactSection = () => {
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full bg-[#0049AF] text-white px-6 py-3 rounded-lg font-semibold text-base hover:bg-[#0066FF] transition-all duration-300 hover:scale-105 hover:shadow-xl transform mt-2"
+                 className="w-full bg-[#F16222] text-white px-6 py-3 rounded-lg font-semibold text-base hover:bg-[#D95C2F] transition-all duration-300 hover:scale-105 hover:shadow-xl transform mt-2"
               >
                 Get Quote
               </button>

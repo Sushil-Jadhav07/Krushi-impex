@@ -34,11 +34,11 @@ const BannerSection = ({
           </div>
 
           {/* Content Container */}
-          <div className="relative z-10 flex flex-col justify-between h-full min-h-[400px] sm:min-h-[450px] lg:min-h-[500px] p-6 sm:p-10 lg:p-16">
+          <div className="relative z-10 flex flex-col justify-center h-full min-h-[400px] lg:min-h-[600px] p-6 sm:p-10 lg:p-16">
             {/* Text Content */}
-            <div className="max-w-2xl">
+            <div className="max-w-3xl">
               <h1 
-                className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-4 sm:mb-6 transition-all duration-700 ease-out ${
+                className={`heading-lg text-white mb-4 sm:mb-6 transition-all duration-700 ease-out ${
                   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
                 }`}
                 style={{ transitionDelay: '200ms' }}
@@ -58,7 +58,7 @@ const BannerSection = ({
 
             {/* CTA Button */}
             <div 
-              className={`transition-all duration-700 ease-out ${
+              className={`transition-all duration-700 ease-out mt-10 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
               }`}
               style={{ transitionDelay: '500ms' }}

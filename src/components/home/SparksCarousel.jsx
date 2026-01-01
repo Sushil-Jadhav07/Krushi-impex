@@ -144,7 +144,7 @@ export const SparksCarousel = React.forwardRef(
           <div className="mb-6 flex items-center justify-between">
             <div>
               <a href="#" className="group inline-flex items-center">
-                <h2 id="sparks-title" className="text-2xl md:text-3xl font-bold tracking-tight text-gray-900">
+                <h2 id="sparks-title" className="heading-md">
                   {title}
                 </h2>
                 <ChevronRight className="ml-2 h-6 w-6 text-gray-900 transition-transform group-hover:translate-x-1" />
@@ -162,24 +162,24 @@ export const SparksCarousel = React.forwardRef(
               {items.map((item, index) => (
                 <motion.div
                   key={item.id}
-                  className="group flex-shrink-0 w-full sm:w-[calc(50%-0.5rem)] md:w-[calc(33.333%-0.67rem)] lg:w-[calc((100%-3rem)/3.5)]"
+                  className="group flex-shrink-0 w-[280px] sm:w-[280px] md:w-[280px] lg:w-[280px]"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
-                  <div className="overflow-hidden rounded-lg border border-gray-200 bg-white text-gray-900 shadow-sm transition-shadow hover:shadow-md">
+                  <div className="overflow-hidden rounded-lg border border-gray-200 bg-white text-gray-900 shadow-sm transition-shadow hover:shadow-md h-[320px] flex flex-col">
                     <img
                       alt={item.title}
-                      className="aspect-video w-full object-cover transition-transform group-hover:scale-105"
+                      className="aspect-video w-full object-cover transition-transform group-hover:scale-105 flex-shrink-0"
                       height="160"
                       src={item.imageSrc}
                       width="280"
                     />
-                    <div className="p-4">
-                      <h3 className="text-md font-semibold leading-tight text-gray-900">
+                    <div className="p-4 flex flex-col flex-grow">
+                      <h3 className="heading-sm text-md font-semibold leading-tight text-gray-900 line-clamp-2">
                         {item.title}
                       </h3>
-                      <div className="mt-4">
+                      <div className="mt-auto">
                         <p className="text-xl font-bold text-gray-900">{item.count}</p>
                         <p className="text-xs font-medium uppercase tracking-wider text-gray-500">
                           {item.countLabel}
