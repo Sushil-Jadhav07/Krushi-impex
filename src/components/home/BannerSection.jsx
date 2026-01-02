@@ -24,7 +24,7 @@ const BannerSection = ({
 
   return (
     <section className="w-full bg-gray-50 px-4 sm:px-6 lg:px-8 pt-24 pb-8 lg:pt-32 lg:pb-16">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-[1350px] mx-auto">
         {/* Banner Container with rounded corners */}
         <div 
           className="relative overflow-hidden rounded-3xl sm:rounded-[2.5rem] lg:rounded-[3rem] shadow-2xl"

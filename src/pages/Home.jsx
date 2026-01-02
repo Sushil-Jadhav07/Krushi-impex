@@ -24,10 +24,9 @@ function Home() {
       <Navbar2 />
       <BannerSection />
       <VelocityScroll 
-        text1="Birthday Candles │ Balloons │" 
-        text2="Cake Toppers │ Party Décor Items │"
+        text1="Birthday Candles" 
         default_velocity={2}
-        className="font-bold text-3xl md:text-6xl mb-6 text-[#2C328C]"
+        className="font-bold text-xl md:text-3xl text-[#FFF]"
         style={{ fontFamily: 'Conthrax, sans-serif' }}
       />
       {/* <HeroSection /> */}

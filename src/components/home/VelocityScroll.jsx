@@ -65,13 +65,14 @@ const ParallaxText = ({ children, baseVelocity = 100, className = '' }) => {
   });
 
   return (
-    <div
-      className="w-full overflow-hidden whitespace-nowrap"
-      ref={containerRef}
-    >
-      <motion.div className={`inline-block ${className}`} style={{ x }}>
+    <div className="overflow-hidden whitespace-nowrap flex flex-nowrap" ref={containerRef}>
+      <motion.div className="flex whitespace-nowrap flex-nowrap" style={{ x }}>
         {Array.from({ length: repetitions }).map((_, i) => (
-          <span className="mb-4" key={i} ref={i === 0 ? textRef : null}>
+          <span
+            key={i}
+            ref={i === 0 ? textRef : null}
+            className={className}
+          >
             {children}{' '}
           </span>
         ))}
@@ -81,23 +82,34 @@ const ParallaxText = ({ children, baseVelocity = 100, className = '' }) => {
 };
 
 // Main Velocity Scroll Component
-const VelocityScroll = ({ 
-  text1 = "Birthday Candles", 
+const VelocityScroll = ({
+  text1 = "Birthday Candles",
   text2 = "Balloons",
+  text3 = "Cake Toppers",
+  text4 = "Party Décor Items",
+  separator = "●",
   default_velocity = 5,
-  className = ''
+  className = '',
+  style = {}
 }) => {
+  const texts = [text1, text2, text3, text4].filter(Boolean);
+  
   return (
-    <section className="relative w-full bg-white py-8 md:py-12">
-      <div className="w-full">
-        <ParallaxText baseVelocity={default_velocity} className={className}>
-          {text1}
+    <div className="bg-black flex items-center justify-center p-8">
+      <section className="w-full">
+        <ParallaxText baseVelocity={default_velocity} className={className || "text-7xl font-bold text-white tracking-tight"}>
+          <span style={style}>
+            {texts.map((text, index) => (
+              <React.Fragment key={index}>
+                {text}
+                {index < texts.length - 1 && <span className="mx-8">{separator}</span>}
+              </React.Fragment>
+            ))}
+            <span className="mx-8">{separator}</span>
+          </span>
         </ParallaxText>
-        <ParallaxText baseVelocity={-default_velocity} className={className}>
-          {text2}
-        </ParallaxText>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 };
 
