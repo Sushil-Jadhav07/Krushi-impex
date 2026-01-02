@@ -1,27 +1,31 @@
 import React from 'react';
 import { TrendingUp, Package } from 'lucide-react';
+import birthdayCandlesImage from '../../assets/candles.png';
+import balloonsImage from '../../assets/balloons.png';
+import cakeToppersImage from '../../assets/cake-topper.png';
+import partyDecorItemsImage from '../../assets/party-decor.png';
 
 const ProductsRangeSection = () => {
   const productCategories = [
     {
       title: 'Birthday Candles',
       subtitle: '(Top-Selling Category)',
-      image: null
+      image: birthdayCandlesImage
     },
     {
       title: 'Balloons',
       subtitle: '',
-      image: null
+      image: balloonsImage
     },
     {
       title: 'Cake Toppers',
       subtitle: '',
-      image: null
+      image: cakeToppersImage
     },
     {
       title: 'Party Décor Items',
       subtitle: 'for birthdays, anniversaries, and festivals',
-      image: null
+      image: partyDecorItemsImage
     }
   ];
 
@@ -62,11 +66,9 @@ const ProductsRangeSection = () => {
             >
               {/* Image Container */}
               <div className="relative bg-gray-300 rounded-2xl overflow-hidden aspect-[3/4] mb-4 hover:shadow-xl transition-shadow">
-                <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-gray-200 to-gray-300">
-                  <div className="w-20 h-20 border-4 border-gray-400 rounded-xl flex items-center justify-center">
-                    <Package size={40} className="text-gray-400" />
-                  </div>
-                </div>
+
+                <img src={category.image} alt={category.title} className="w-full h-full object-cover" />
+                
                 
                 {/* Hover Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#2C328C] via-transparent to-transparent opacity-0 group-hover:opacity-60 transition-opacity" />

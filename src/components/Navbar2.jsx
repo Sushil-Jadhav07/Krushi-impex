@@ -18,9 +18,6 @@ const PremiumNavbar = () => {
     { label: "Home", href: "/" },
     { label: "About", href: "/about" },
     { label: "Products", href: "#products" },
-    { label: "Who We Serve", href: "#who-we-serve" },
-    { label: "Why Us", href: "#why-us" },
-    { label: "Quality", href: "#quality" },
     { label: "Contact", href: "/contact" }
   ];
 
@@ -62,7 +59,7 @@ const PremiumNavbar = () => {
           left: 0;
           width: 0;
           height: 2px;
-          background: #25D366;
+          background: #F16222;
           transition: width 0.3s cubic-bezier(0.22, 1, 0.36, 1);
         }
         
@@ -119,7 +116,7 @@ const PremiumNavbar = () => {
                   <Component
                     key={index}
                     {...props}
-                    className="nav-link text-base font-medium text-gray-700 hover:text-gray-900 transition-colors duration-300"
+                    className="nav-link text-base font-medium text-gray-700 hover:text-[#2C328C] transition-colors duration-300"
                   >
                     {link.label}
                   </Component>

@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { MessageCircle, FileText } from 'lucide-react';
+import bannerImage from '../../assets/krushi-banner.png';
 
-// Banner Component
 const BannerSection = ({
-  title = "Designing Spaces That Inspire & Endure",
-  subtitle = "We transform visions into timeless architecture, blending innovative design with functional excellence",
-  ctaText = "Schedule a Free Consultation",
-  ctaHref = "#contact",
-  backgroundImage = "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&q=80"
+  title = "India's Celebration Partner",
+  services = "Import • Sourcing • Trading • Pan-India B2B Supply",
+  description = "Sourcing trending celebration and event products from China and supplying India's wholesalers, retailers, and event businesses with speed, quality, and reliability.",
+  backgroundImage = bannerImage
 }) => {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -14,8 +14,16 @@ const BannerSection = ({
     setIsVisible(true);
   }, []);
 
+  const handleWhatsApp = () => {
+    window.open('https://wa.me/919876543210', '_blank');
+  };
+
+  const handleGetQuote = () => {
+    window.location.href = '#contact';
+  };
+
   return (
-    <section className="w-full px-4 sm:px-6 lg:px-8 py-8 lg:py-28">
+    <section className="w-full bg-gray-50 px-4 sm:px-6 lg:px-8 pt-24 pb-8 lg:pt-32 lg:pb-16">
       <div className="max-w-7xl mx-auto">
         {/* Banner Container with rounded corners */}
         <div 
@@ -23,70 +31,99 @@ const BannerSection = ({
           style={{ minHeight: '600px' }}
         >
           {/* Background Image */}
-          <div 
-            className="absolute inset-0 bg-cover bg-center"
-            style={{ 
-              backgroundImage: `url(${backgroundImage})`,
-            }}
-          >
-            {/* Dark Overlay */}
-            <div className="absolute inset-0 bg-black/50"></div>
-          </div>
+          {backgroundImage ? (
+            <div 
+              className="absolute inset-0 bg-cover bg-center"
+              style={{ 
+                backgroundImage: `url(${backgroundImage})`,
+              }}
+            >
+            </div>
+          ) : (
+            // Fallback Gradient Background
+            <div className="absolute inset-0 bg-gradient-to-br from-[#2C328C] via-[#3d4ab8] to-[#F16222]" />
+          )}
+
 
           {/* Content Container */}
-          <div className="relative z-10 flex flex-col justify-center h-full min-h-[400px] lg:min-h-[600px] p-6 sm:p-10 lg:p-16">
+          <div className="relative z-10 flex flex-col justify-center h-full min-h-[500px] lg:min-h-[600px] p-6 sm:p-10 lg:p-16">
             {/* Text Content */}
             <div className="max-w-3xl">
+              {/* Main Title */}
               <h1 
-                className={`heading-lg text-white mb-4 sm:mb-6 transition-all duration-700 ease-out ${
+                className={`text-4xl md:text-6xl font-bold text-white mb-4 sm:mb-6 transition-all duration-700 ease-out ${
                   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
                 }`}
-                style={{ transitionDelay: '200ms' }}
+                style={{ 
+                  transitionDelay: '200ms',
+                  fontFamily: 'Conthrax, sans-serif'
+                }}
               >
                 {title}
               </h1>
               
+              {/* Services Line */}
               <p 
-                className={`text-sm sm:text-base lg:text-lg text-white/90 leading-relaxed max-w-xl transition-all duration-700 ease-out ${
+                className={`text-base md:text-xl  text-white/95 font-semibold mb-4 sm:mb-6 transition-all duration-700 ease-out ${
                   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
                 }`}
-                style={{ transitionDelay: '350ms' }}
+                style={{ 
+                  transitionDelay: '350ms',
+                  fontFamily: 'Bahnschrift, sans-serif'
+                }}
               >
-                {subtitle}
+                {services}
+              </p>
+
+              {/* Description */}
+              <p 
+                className={`text-sm md:text-base text-white/90 leading-relaxed max-w-2xl transition-all duration-700 ease-out ${
+                  isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
+                }`}
+                style={{ 
+                  transitionDelay: '500ms',
+                  fontFamily: 'Bahnschrift, sans-serif'
+                }}
+              >
+                {description}
               </p>
             </div>
 
-            {/* CTA Button */}
+            {/* CTA Buttons */}
             <div 
-              className={`transition-all duration-700 ease-out mt-10 ${
+              className={`flex flex-col sm:flex-row gap-4 mt-8 sm:mt-10 transition-all duration-700 ease-out ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
               }`}
-              style={{ transitionDelay: '500ms' }}
+              style={{ transitionDelay: '650ms' }}
             >
-              <a
-                href={ctaHref}
-                className="inline-block bg-white text-gray-900 px-6 sm:px-8 lg:px-10 py-3 sm:py-4 rounded-full font-semibold text-sm sm:text-base lg:text-lg hover:bg-gray-100 transition-all duration-300 hover:scale-105 hover:shadow-xl"
+              {/* Get a Quote Button */}
+              <button
+                onClick={handleGetQuote}
+                className="inline-flex items-center justify-center gap-3 bg-white text-[#2C328C] px-6 sm:px-8 py-3.5 sm:py-4 rounded-full font-bold text-sm sm:text-base hover:bg-[#F4F2F2] transition-all duration-300 hover:scale-105 hover:shadow-xl group"
+                style={{ fontFamily: 'Bahnschrift, sans-serif' }}
               >
-                {ctaText}
-              </a>
+                <FileText size={22} className="group-hover:scale-110 transition-transform" />
+                Get a Quote
+              </button>
+
+              {/* WhatsApp Button */}
+              <button
+                onClick={handleWhatsApp}
+                className="inline-flex items-center justify-center gap-3 bg-transparent border-2 border-white text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-full font-bold text-sm sm:text-base hover:bg-white hover:text-[#2C328C] transition-all duration-300 hover:scale-105 hover:shadow-xl group"
+                style={{ fontFamily: 'Bahnschrift, sans-serif' }}
+              >
+                <MessageCircle size={22} className="group-hover:scale-110 transition-transform" />
+                WhatsApp Us
+              </button>
             </div>
           </div>
+
+          {/* Bottom Accent Line */}
+          <div className="absolute bottom-0 left-0 right-0 h-2 bg-gradient-to-r from-[#F16222] via-[#D95C2F] to-[#F16222]" />
         </div>
       </div>
     </section>
   );
 };
 
-// Demo App
-export default function App() {
-  return (
-    <div className=" bg-gray-50">
-      {/* Example with default props */}
-      <BannerSection />
-
-    
-
-      
-    </div>
-  );
-}
+export default BannerSection;

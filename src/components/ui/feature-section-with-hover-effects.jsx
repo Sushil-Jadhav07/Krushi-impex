@@ -59,7 +59,7 @@ export function FeaturesSectionWithHoverEffects({
   return (
     <div className="w-full max-w-7xl mx-auto">
       {/* Title and Subtitle Section */}
-      <div className="text-center mb-12 sm:mb-16 lg:mb-20 px-4">
+      <div className="text-center mb-4 px-4">
         <h2 className="heading-lg mb-4 sm:mb-6">
           {title}
         </h2>

@@ -7,24 +7,21 @@ function Footer({ onWhatsAppClick }) {
             <img 
               src="/krushi-logo.png" 
               alt="Krushi Impex Logo" 
-              className="h-12 md:h-20 w-auto object-contain mb-4 filter brightness-0 invert"
+              className="h-12 md:h-20 w-auto object-contain mb-4 "
             />
             <p className="text-gray-400">
               India's Celebration Partner - Importing and supplying quality celebration products across India.
             </p>
           </div>
           <div>
-            <h4 className="font-semibold mb-4">Quick Links</h4>
+            <h4 className="heading-sm font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2 text-gray-400">
-              <li><a href="#home" className="hover:text-amber-400 transition-colors">Home</a></li>
-              <li><a href="#products" className="hover:text-amber-400 transition-colors">Products</a></li>
-              <li><a href="#who-we-serve" className="hover:text-amber-400 transition-colors">Who We Serve</a></li>
-              <li><a href="#why-us" className="hover:text-amber-400 transition-colors">Why Us</a></li>
-              <li><a href="#quality" className="hover:text-amber-400 transition-colors">Quality</a></li>
+              <li><a href="/home" className="hover:text-amber-400 transition-colors">Home</a></li>
+              <li><a href="/products" className="hover:text-amber-400 transition-colors">Products</a></li>
             </ul>
           </div>
           <div>
-            <h4 className="font-semibold mb-4">Contact</h4>
+            <h4 className="heading-sm font-semibold mb-4">Contact</h4>
             <ul className="space-y-2 text-gray-400">
               <li className="flex items-center gap-2">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -32,11 +29,13 @@ function Footer({ onWhatsAppClick }) {
                 </svg>
                 <a href="#" onClick={onWhatsAppClick} className="hover:text-amber-400 transition-colors">WhatsApp Us</a>
               </li>
+              <li><a href="/contact" className="hover:text-amber-400 transition-colors">Contact Us</a></li>
+
             </ul>
           </div>
         </div>
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; 2024 Krushi Impex. All rights reserved.</p>
+          <p>&copy; 2025 Krushi Impex. All rights reserved.</p>
         </div>
       </div>
     </footer>

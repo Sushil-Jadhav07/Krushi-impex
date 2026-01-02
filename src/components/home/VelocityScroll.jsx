@@ -71,7 +71,7 @@ const ParallaxText = ({ children, baseVelocity = 100, className = '' }) => {
     >
       <motion.div className={`inline-block ${className}`} style={{ x }}>
         {Array.from({ length: repetitions }).map((_, i) => (
-          <span key={i} ref={i === 0 ? textRef : null}>
+          <span className="mb-4" key={i} ref={i === 0 ? textRef : null}>
             {children}{' '}
           </span>
         ))}
@@ -82,7 +82,8 @@ const ParallaxText = ({ children, baseVelocity = 100, className = '' }) => {
 
 // Main Velocity Scroll Component
 const VelocityScroll = ({ 
-  text = "Velocity Scroll", 
+  text1 = "Birthday Candles", 
+  text2 = "Balloons",
   default_velocity = 5,
   className = ''
 }) => {
@@ -90,10 +91,10 @@ const VelocityScroll = ({
     <section className="relative w-full bg-white py-8 md:py-12">
       <div className="w-full">
         <ParallaxText baseVelocity={default_velocity} className={className}>
-          {text}
+          {text1}
         </ParallaxText>
         <ParallaxText baseVelocity={-default_velocity} className={className}>
-          {text}
+          {text2}
         </ParallaxText>
       </div>
     </section>
@@ -101,4 +102,3 @@ const VelocityScroll = ({
 };
 
 export default VelocityScroll;
-

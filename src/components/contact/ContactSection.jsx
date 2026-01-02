@@ -115,7 +115,7 @@ const ContactSection = () => {
         ref={heroRef}
         className="relative w-full pt-20 md:pt-32 pb-8 px-4 sm:px-6 lg:px-8 overflow-hidden"
         style={{
-          background: 'linear-gradient(135deg, #f8fafc 0%, #ffffff 25%, #f0f7ff 50%, #ffffff 75%, #f8fafc 100%)',
+          background: '',
           backgroundSize: '400% 400%',
           animation: 'gradientShift 15s ease infinite'
         }}
@@ -190,16 +190,11 @@ const ContactSection = () => {
               transition: 'all 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s'
             }}
           >
-            <h1 className="heading-lg mb-8 text-center">
+            <h1 className="heading-md max-w-8xl mx-auto mb-8 text-center">
               <span className="block mb-2">
-                Looking for bulk celebration products,
+                Looking for bulk celebration products, trending party items, or custom sourcing from China?
               </span>
-              <span className="block mb-2">
-                trending party items, or
-              </span>
-              <span className="block gradient-text">
-                custom sourcing from China?
-              </span>
+              
             </h1>
           </div>
 
@@ -265,7 +260,7 @@ const ContactSection = () => {
                       </svg>
                     </div>
                     <div>
-                      <h3 className="heading-md text-base mb-1">Mehul Shah</h3>
+                      <h3 className="heading-xs text-base mb-1">Mehul Shah</h3>
                       <p className="body-md">Founder, Krushi Impex</p>
                     </div>
                   </div>
@@ -283,7 +278,7 @@ const ContactSection = () => {
                       </svg>
                     </div>
                     <div>
-                      <p className="text-sm text-gray-500 mb-1">WhatsApp</p>
+                      <p className="heading-xs text-gray-500 mb-1">WhatsApp</p>
                       <p className="text-lg font-semibold text-gray-900 group-hover:text-[#2C328C] transition-colors">
                         +91 7666416997
                       </p>
@@ -303,7 +298,7 @@ const ContactSection = () => {
                       </svg>
                     </div>
                     <div>
-                      <p className="text-sm text-gray-500 mb-1">Email</p>
+                      <p className="heading-xs text-gray-500 mb-1">Email</p>
                       <p className="text-lg font-semibold text-[#2C328C] underline group-hover:text-[#F16222] transition-colors">
                         krushiimpex@gmail.com
                       </p>
@@ -320,7 +315,7 @@ const ContactSection = () => {
                       </svg>
                     </div>
                     <div>
-                      <p className="text-sm text-gray-500 mb-1">WeChat ID</p>
+                      <p className=" text-gray-500 mb-1">WeChat ID</p>
                       <p className="text-lg font-semibold text-gray-900">info_kimpex</p>
                     </div>
                   </div>

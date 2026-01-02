@@ -85,16 +85,16 @@ const PremiumCTASection = () => {
               </div>
 
               {/* Headline */}
-              <h2 className="heading-lg mb-6">
-                Let's Power Your
+              <h2 className="heading-lg mb-4">
+                Let's Power Your Celebrations
                 <br />
-                <span className="text-[#2C328C]">
+                {/* <span className="text-[#2C328C]">
                   Celebrations
-                </span>
+                </span> */}
               </h2>
 
               {/* Subtext */}
-              <p className="body-lg mb-10 max-w-2xl mx-auto">
+              <p className="body-lg mb-8 max-w-2xl mx-auto">
                 Looking for a reliable celebration product importer and supplier?
               </p>
 
@@ -104,9 +104,9 @@ const PremiumCTASection = () => {
                   Get a Quote
                 </button>
 
-                <button className="btn-secondary w-full sm:w-auto px-8 py-4 bg-gray-100 text-gray-900 font-semibold rounded-full border border-gray-300 text-base md:text-lg hover:bg-gray-200">
-                  Contact Us
-                </button>
+                <a href="/contact" className="btn-secondary w-full sm:w-auto px-8 py-4 bg-gray-100 text-gray-900 font-semibold rounded-full border border-gray-300 text-base md:text-lg hover:bg-gray-200">
+                  <span className="text-gray-900">Contact Us</span>
+                </a>
               </div>
 
             </div>

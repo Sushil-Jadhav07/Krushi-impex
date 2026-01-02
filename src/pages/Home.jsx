@@ -24,15 +24,17 @@ function Home() {
       <Navbar2 />
       <BannerSection />
       <VelocityScroll 
-        text="Velocity Scroll" 
-        default_velocity={5}
-        className="font-bold text-4xl md:text-6xl lg:text-8xl text-black"
+        text1="Birthday Candles │ Balloons │" 
+        text2="Cake Toppers │ Party Décor Items │"
+        default_velocity={2}
+        className="font-bold text-3xl md:text-6xl mb-6 text-[#2C328C]"
+        style={{ fontFamily: 'Conthrax, sans-serif' }}
       />
       {/* <HeroSection /> */}
       <ProductCategories />
       <SparksCarousel />
       {/* <LandingAccordionItem /> */}
-      <section className="w-full px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 bg-white">
+      <section className="w-full px-4 sm:px-6 lg:px-8 py-8 md:py-16 bg-white">
         <FeaturesSectionWithHoverEffects />
       </section>
       <AdvantagesSection />
