@@ -1,40 +1,125 @@
-import React from 'react';
-import { TrendingUp, Package } from 'lucide-react';
-import birthdayCandlesImage from '../../assets/candles.png';
-import balloonsImage from '../../assets/balloons.png';
-import cakeToppersImage from '../../assets/cake-topper.png';
-import partyDecorItemsImage from '../../assets/party-decor.png';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { TrendingUp, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const ProductsRangeSection = () => {
+  const [currentSlide, setCurrentSlide] = useState(1); // Start at 1 because we have a duplicate at the beginning
+  const [isTransitioning, setIsTransitioning] = useState(true);
+  const carouselRef = useRef(null);
+  const isJumpingRef = useRef(false);
+
   const productCategories = [
     {
       title: 'Birthday Candles',
       subtitle: '(Top-Selling Category)',
-      image: birthdayCandlesImage
+      image: 'https://images.unsplash.com/photo-1558636508-e0db3814bd1d?w=400&h=500&fit=crop'
     },
     {
       title: 'Balloons',
       subtitle: '',
-      image: balloonsImage
+      image: 'https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=400&h=500&fit=crop'
     },
     {
       title: 'Cake Toppers',
       subtitle: '',
-      image: cakeToppersImage
+      image: 'https://images.unsplash.com/photo-1478145046317-39f10e56b5e9?w=600&auto=format&fit=crop'
     },
     {
       title: 'Party Décor Items',
       subtitle: 'for birthdays, anniversaries, and festivals',
-      image: partyDecorItemsImage
+      image: 'https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=400&h=500&fit=crop'
     }
   ];
+
+  // Create infinite loop array: [last, ...original, first]
+  const infiniteCategories = [
+    productCategories[productCategories.length - 1], // Last item at the beginning
+    ...productCategories,
+    productCategories[0] // First item at the end
+  ];
+
+  const handleNextSlide = useCallback(() => {
+    if (isJumpingRef.current) return;
+    setIsTransitioning(true);
+    setCurrentSlide((prev) => prev + 1);
+  }, []);
+
+  const handlePrevSlide = useCallback(() => {
+    if (isJumpingRef.current) return;
+    setIsTransitioning(true);
+    setCurrentSlide((prev) => prev - 1);
+  }, []);
+
+  const goToSlide = useCallback((index) => {
+    if (isJumpingRef.current) return;
+    setIsTransitioning(true);
+    setCurrentSlide(index + 1); // +1 because we start at index 1 (after the duplicate)
+  }, []);
+
+  // Get the actual slide index for display (0 to productCategories.length - 1)
+  const getDisplayIndex = useCallback(() => {
+    if (currentSlide === 0) return productCategories.length - 1;
+    if (currentSlide === infiniteCategories.length - 1) return 0;
+    return currentSlide - 1;
+  }, [currentSlide, infiniteCategories.length, productCategories.length]);
+
+  // Handle seamless loop transitions
+  useEffect(() => {
+    const carousel = carouselRef.current;
+    if (!carousel) return;
+
+    const handleTransitionEnd = (e) => {
+      // Only handle transform transitions
+      if (e.propertyName !== 'transform') return;
+      
+      // If we're at the duplicate at the end (last index), jump to the real first slide
+      if (currentSlide === infiniteCategories.length - 1) {
+        isJumpingRef.current = true;
+        setIsTransitioning(false);
+        // Small delay to ensure transition is complete
+        setTimeout(() => {
+          setCurrentSlide(1);
+          // Re-enable transitions after a brief moment
+          setTimeout(() => {
+            setIsTransitioning(true);
+            isJumpingRef.current = false;
+          }, 10);
+        }, 10);
+      }
+      // If we're at the duplicate at the beginning (index 0), jump to the real last slide
+      else if (currentSlide === 0) {
+        isJumpingRef.current = true;
+        setIsTransitioning(false);
+        setTimeout(() => {
+          setCurrentSlide(productCategories.length);
+          setTimeout(() => {
+            setIsTransitioning(true);
+            isJumpingRef.current = false;
+          }, 10);
+        }, 10);
+      }
+    };
+
+    carousel.addEventListener('transitionend', handleTransitionEnd);
+    return () => carousel.removeEventListener('transitionend', handleTransitionEnd);
+  }, [currentSlide, infiniteCategories.length, productCategories.length]);
+
+  // Auto-play functionality
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (!isJumpingRef.current) {
+        handleNextSlide();
+      }
+    }, 3000); // Change slide every 3 seconds
+
+    return () => clearInterval(interval);
+  }, [handleNextSlide]);
 
   return (
     <div className="w-full bg-[#F4F2F2] py-16 px-4 sm:px-6 lg:px-16">
       <div className="max-w-7xl mx-auto">
         {/* Main Heading */}
         <h2 
-          className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-black"
+          className="heading-md md:heading-lg font-bold mb-6 text-black"
           style={{ fontFamily: 'Conthrax, sans-serif' }}
         >
           Our Range of Products
@@ -57,8 +142,101 @@ const ProductsRangeSection = () => {
           <TrendingUp size={28} className="text-[#F16222]" />
         </h3>
 
-        {/* Product Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+        {/* Mobile Carousel (visible only on mobile) */}
+        <div className="lg:hidden relative mb-10">
+          {/* Carousel Container */}
+          <div className="relative overflow-hidden">
+            <div 
+              ref={carouselRef}
+              className="flex"
+              style={{ 
+                transform: `translateX(-${currentSlide * 66.67}%)`,
+                transition: isTransitioning ? 'transform 0.5s ease-out' : 'none'
+              }}
+            >
+              {infiniteCategories.map((category, index) => {
+                // Determine if this is the first item (Birthday Candles) for badge display
+                // Show badge on the real first item (index 1) and its duplicate (index infiniteCategories.length - 1)
+                const isFirstItem = index === 1 || index === infiniteCategories.length - 1;
+                
+                return (
+                  <div 
+                    key={`${category.title}-${index}`}
+                    className="w-2/3 flex-shrink-0 px-2"
+                  >
+                    {/* Image Container */}
+                    <div className="relative bg-gray-300 rounded-2xl overflow-hidden aspect-[3/4] mb-4">
+                      <img src={category.image} alt={category.title} className="w-full h-full object-cover" />
+                      
+                      {/* Badge for Top-Selling */}
+                      {isFirstItem && (
+                        <div className="absolute top-4 right-4 bg-[#F16222] text-white px-3 py-1 rounded-full text-xs font-bold"
+                          style={{ fontFamily: 'Bahnschrift, sans-serif' }}
+                        >
+                          TOP SELLING
+                        </div>
+                      )}
+                    </div>
+
+                    {/* Product Info */}
+                    <h4 
+                      className="text-lg font-bold text-black mb-1 text-center"
+                      style={{ fontFamily: 'Conthrax, sans-serif' }}
+                    >
+                      {category.title}
+                    </h4>
+                    
+                    {/* Subtitle */}
+                    {category.subtitle && (
+                      <p 
+                        className="text-sm text-gray-600 italic text-center"
+                        style={{ fontFamily: 'Bahnschrift, sans-serif' }}
+                      >
+                        {category.subtitle}
+                      </p>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Navigation Arrows */}
+          <button
+            onClick={handlePrevSlide}
+            className="absolute left-0 top-1/3 -translate-y-1/2 bg-white/90 p-2 rounded-full shadow-lg hover:bg-white transition-colors z-10"
+            aria-label="Previous slide"
+          >
+            <ChevronLeft size={24} className="text-[#2C328C]" />
+          </button>
+          
+          <button
+            onClick={handleNextSlide}
+            className="absolute right-0 top-1/3 -translate-y-1/2 bg-white/90 p-2 rounded-full shadow-lg hover:bg-white transition-colors z-10"
+            aria-label="Next slide"
+          >
+            <ChevronRight size={24} className="text-[#2C328C]" />
+          </button>
+
+          {/* Dots Indicator */}
+          <div className="flex justify-center gap-2 mt-6">
+            {productCategories.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => goToSlide(index)}
+                className={`w-2.5 h-2.5 rounded-full transition-all ${
+                  getDisplayIndex() === index 
+                    ? 'bg-[#F16222] w-8' 
+                    : 'bg-gray-400'
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* Desktop Grid (visible only on desktop) */}
+        <div className="hidden lg:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
           {productCategories.map((category, index) => (
             <div 
               key={index}
@@ -66,9 +244,7 @@ const ProductsRangeSection = () => {
             >
               {/* Image Container */}
               <div className="relative bg-gray-300 rounded-2xl overflow-hidden aspect-[3/4] mb-4 hover:shadow-xl transition-shadow">
-
                 <img src={category.image} alt={category.title} className="w-full h-full object-cover" />
-                
                 
                 {/* Hover Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#2C328C] via-transparent to-transparent opacity-0 group-hover:opacity-60 transition-opacity" />

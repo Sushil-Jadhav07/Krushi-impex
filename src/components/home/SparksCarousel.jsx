@@ -143,7 +143,7 @@ const SparksCarousel = ({
           <div className="flex items-center justify-between">
             <div>
               <h2 
-                className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-2"
+                className="heading-md md:heading-lg text-3xl md:text-4xl font-bold text-black mb-2"
                 style={{ fontFamily: 'Conthrax, sans-serif' }}
               >
                 {title}

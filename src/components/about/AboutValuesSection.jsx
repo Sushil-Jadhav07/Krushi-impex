@@ -149,7 +149,7 @@ const ValueCard = ({ icon: Icon, title, description, index }) => {
         {/* Content */}
         <div className="flex-1 min-w-0">
           <h3 
-            className="heading-md mb-2"
+            className="md:heading-sm heading-xs mb-2"
             style={{
               transform: isHovered ? 'translateX(5px)' : 'translateX(0)',
               transition: 'transform 0.3s ease-out'
@@ -158,7 +158,7 @@ const ValueCard = ({ icon: Icon, title, description, index }) => {
             {title}
           </h3>
           <p 
-            className="text-sm sm:text-base text-gray-600 leading-relaxed"
+            className="md:body-sm body-xs text-gray-600 leading-relaxed"
             style={{
               transform: isHovered ? 'translateX(5px)' : 'translateX(0)',
               transition: 'transform 0.3s ease-out 0.05s'
@@ -265,7 +265,7 @@ const AboutValuesSection = ({
 
             {/* Main Heading */}
             <h2 
-              className="heading-lg mb-4 sm:mb-6"
+              className="md:heading-lg heading-md mb-2 "
               style={{
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
@@ -277,7 +277,7 @@ const AboutValuesSection = ({
 
             {/* Introductory Text */}
             <p 
-              className="text-base sm:text-lg text-gray-600 mb-8 sm:mb-10"
+              className="text-base sm:text-lg text-gray-600 md:mb-6 mb-4"
               style={{
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? 'translateY(0)' : 'translateY(20px)',

@@ -33,7 +33,7 @@ const AboutHeroSection = () => {
   return (
     <section 
       ref={sectionRef}
-      className="w-full py-12 md:py-24 px-4 sm:px-6 lg:px-8 bg-gray-50"
+      className="w-full pt-20 md:pt-24 pb-12 md:pb-24 px-4 sm:px-6 lg:px-8 bg-gray-50"
     >
       <div className="max-w-7xl mx-auto py-12 md:py-24">
         <div className="relative">
@@ -106,7 +106,7 @@ const AboutHeroSection = () => {
 
                 {/* Main Headline */}
                 <h2 
-                  className="heading-lg mb-6"
+                  className="md:heading-lg heading-md mb-6"
                   style={{
                     opacity: isVisible ? 1 : 0,
                     transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
@@ -119,7 +119,7 @@ const AboutHeroSection = () => {
 
                 {/* Description Paragraph */}
                 <p 
-                  className="body-lg mb-8"
+                  className="md:body-lg body-sm mb-8"
                   style={{
                     opacity: isVisible ? 1 : 0,
                     transform: isVisible ? 'translateY(0)' : 'translateY(20px)',

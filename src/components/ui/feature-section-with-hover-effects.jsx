@@ -59,8 +59,8 @@ export function FeaturesSectionWithHoverEffects({
   return (
     <div className="w-full max-w-7xl mx-auto">
       {/* Title and Subtitle Section */}
-      <div className="text-center mb-4 px-4">
-        <h2 className="heading-lg mb-4 sm:mb-6">
+      <div className="md:text-center text-left mb-4 px-0 md:px-4">
+        <h2 className="md:heading-lg heading-base mb-4 sm:mb-6">
           {title}
         </h2>
         <p className="body-lg max-w-3xl mx-auto">
@@ -69,7 +69,7 @@ export function FeaturesSectionWithHoverEffects({
       </div>
 
       {/* Features Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 relative z-10 py-10">
+      <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 relative z-10 md:py-10 py-6">
         {features.map((feature, index) => (
           <Feature key={feature.title} {...feature} index={index} />
         ))}
@@ -87,9 +87,10 @@ const Feature = ({
   return (
     <div
       className={cn(
-        "flex flex-col lg:border-r py-10 relative group/feature border-gray-200",
+        "flex flex-col lg:border-r py-6 md:py-10 relative group/feature border-gray-200",
         (index === 0 || index === 4) && "lg:border-l border-gray-200",
-        index < 4 && "lg:border-b border-gray-200"
+        index < 4 && "lg:border-b border-gray-200",
+        index % 2 === 0 && "md:border-r-0 border-r border-gray-200"
       )}
     >
       {index < 4 && (
@@ -98,16 +99,16 @@ const Feature = ({
       {index >= 4 && (
         <div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-b from-gray-100 to-transparent pointer-events-none" />
       )}
-      <div className="mb-4 relative z-10 px-10 text-gray-600">
+      <div className="mb-4 relative z-10 px-4 md:px-10 text-gray-600">
         <Icon className="w-6 h-6" />
       </div>
-      <div className="text-lg font-bold mb-2 relative z-10 px-10">
+      <div className="text-lg font-bold mb-2 relative z-10 px-4 md:px-10">
         <div className="absolute left-0 inset-y-0 h-6 group-hover/feature:h-8 w-1 rounded-tr-full rounded-br-full bg-gray-300 group-hover/feature:bg-[#2C328C] transition-all duration-200 origin-center" />
         <span className="group-hover/feature:translate-x-2 transition duration-200 inline-block text-gray-800">
           {title}
         </span>
       </div>
-      <p className="text-sm text-gray-600 max-w-xs relative z-10 px-10">
+      <p className="text-sm text-gray-600 max-w-xs relative z-10 px-4 md:px-10">
         {description}
       </p>
     </div>

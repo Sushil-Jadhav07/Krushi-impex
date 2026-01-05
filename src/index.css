@@ -217,6 +217,15 @@
 
   .heading-md {
     font-family: 'Conthrax', sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    color: var(--brand-primary-blue);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+
+  .heading-base {
+    font-family: 'Conthrax', sans-serif;
     font-size: 28px;
     font-weight: 600;
     color: var(--brand-primary-blue);
@@ -236,6 +245,15 @@
   .heading-xs {
     font-family: 'Conthrax', sans-serif;
     font-size: 18px;
+    font-weight: 600;
+    color: var(--brand-primary-blue);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+
+  .heading-xxs {
+    font-family: 'Conthrax', sans-serif;
+    font-size: 16px;
     font-weight: 600;
     color: var(--brand-primary-blue);
     line-height: 1.2;
@@ -277,6 +295,14 @@
   .body-xs {
     font-family: 'Bahnschrift', sans-serif;
     font-size: 12px;
+    font-weight: 400;
+    color: var(--brand-black);
+    line-height: 1.5;
+  }
+
+  .body-xxs {
+    font-family: 'Bahnschrift', sans-serif;
+    font-size: 10px;
     font-weight: 400;
     color: var(--brand-black);
     line-height: 1.5;

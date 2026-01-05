@@ -78,14 +78,14 @@ const PremiumCTASection = () => {
             }`}
           >
             {/* Content */}
-            <div className="text-center max-w-4xl mx-auto">
+            <div className="text-left max-w-4xl mx-auto">
               {/* Section Label */}
               <div className="text-gray-600 text-sm font-semibold uppercase tracking-wider mb-4">
                 Final CTA
               </div>
 
               {/* Headline */}
-              <h2 className="heading-lg mb-4">
+              <h2 className="md:heading-lg heading-md mb-4">
                 Let's Power Your Celebrations
                 <br />
                 {/* <span className="text-[#2C328C]">
@@ -94,7 +94,7 @@ const PremiumCTASection = () => {
               </h2>
 
               {/* Subtext */}
-              <p className="body-lg mb-8 max-w-2xl mx-auto">
+              <p className="md:body-lg body-md mb-8 max-w-2xl mx-auto">
                 Looking for a reliable celebration product importer and supplier?
               </p>
 
@@ -104,7 +104,7 @@ const PremiumCTASection = () => {
                   Get a Quote
                 </button>
 
-                <a href="/contact" className="btn-secondary w-full sm:w-auto px-8 py-4 bg-gray-100 text-gray-900 font-semibold rounded-full border border-gray-300 text-base md:text-lg hover:bg-gray-200">
+                <a href="/contact" className="text-center btn-secondary w-full sm:w-auto px-8 py-4 bg-gray-100 text-gray-900 font-semibold rounded-full border border-gray-300 text-base md:text-lg hover:bg-gray-200">
                   <span className="text-gray-900">Contact Us</span>
                 </a>
               </div>

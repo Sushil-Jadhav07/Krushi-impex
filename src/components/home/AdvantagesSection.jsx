@@ -58,7 +58,7 @@ const FeatureItem = ({ title, index, isActive, onClick }) => {
         }}
       >
         <h3 
-          className={`heading-xs transition-colors duration-300 ${
+          className={`md:heading-xs heading-xxs transition-colors duration-300 ${
             isActive ? 'text-gray-900' : 'text-gray-600 group-hover:text-gray-800'
           }`}
         >
@@ -152,7 +152,7 @@ const AdvantagesSection = ({
     <section className="w-full py-12 sm:py-16 lg:py-24 px-4 sm:px-6 lg:px-8 bg-[#F4F2F2]">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-12 sm:mb-16">
+        <div className="md:text-center text-left mb-12 sm:mb-16">
           {/* Label */}
           <div 
             className="inline-flex items-center gap-2 text-sm text-gray-600 mb-4"
@@ -168,7 +168,7 @@ const AdvantagesSection = ({
 
           {/* Main Heading */}
           <h2 
-            className="heading-lg max-w-4xl mx-auto mb-6"
+            className="heading-md md:text-center text-left md:heading-lg max-w-4xl mx-auto mb-6"
             style={{
               opacity: isVisible ? 1 : 0,
               transform: isVisible ? 'translateY(0)' : 'translateY(20px)',

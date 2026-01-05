@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { MessageCircle, FileText } from 'lucide-react';
+import { FaWhatsapp } from "react-icons/fa6";
 import bannerImage from '../../assets/krushi-banner.png';
 
 const BannerSection = ({
@@ -46,7 +47,7 @@ const BannerSection = ({
 
 
           {/* Content Container */}
-          <div className="relative z-10 flex flex-col justify-center h-full min-h-[500px] lg:min-h-[600px] p-6 sm:p-10 lg:p-16">
+          <div className="relative z-10 flex flex-col justify-center h-full min-h-[600px] lg:min-h-[600px] p-6 sm:p-10 lg:p-16">
             {/* Text Content */}
             <div className="max-w-3xl">
               {/* Main Title */}
@@ -109,10 +110,10 @@ const BannerSection = ({
               {/* WhatsApp Button */}
               <button
                 onClick={handleWhatsApp}
-                className="inline-flex items-center justify-center gap-3 bg-transparent border-2 border-white text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-full font-bold text-sm sm:text-base hover:bg-white hover:text-[#2C328C] transition-all duration-300 hover:scale-105 hover:shadow-xl group"
+                className="inline-flex items-center justify-center gap-3 bg-green-500 border-2 border-white text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-full font-bold text-sm sm:text-base transition-all duration-300 hover:scale-105 hover:shadow-xl group"
                 style={{ fontFamily: 'Bahnschrift, sans-serif' }}
               >
-                <MessageCircle size={22} className="group-hover:scale-110 transition-transform" />
+                <FaWhatsapp size={28} className="group-hover:scale-110 transition-transform" />
                 WhatsApp Us
               </button>
             </div>

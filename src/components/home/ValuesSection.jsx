@@ -158,7 +158,7 @@ const ValueCard = ({ icon: Icon, title, description, index }) => {
             {title}
           </h3>
           <p 
-            className="body-sm text-gray-600 leading-relaxed"
+            className="md:body-sm body-xs text-gray-600 leading-relaxed"
             style={{
               transform: isHovered ? 'translateX(5px)' : 'translateX(0)',
               transition: 'transform 0.3s ease-out 0.05s'
@@ -270,7 +270,7 @@ const ValuesSection = ({
 
             {/* Main Heading */}
             <h2 
-              className="heading-lg mb-8 sm:mb-10"
+              className="md:heading-lg heading-md mb-8 sm:mb-10"
               style={{
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
