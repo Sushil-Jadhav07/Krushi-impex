@@ -190,7 +190,7 @@ const ContactSection = () => {
               transition: 'all 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s'
             }}
           >
-            <h1 className="heading-md max-w-8xl mx-auto mb-8 text-center">
+            <h1 className="md:heading-md heading-xs max-w-8xl mx-auto mb-8 text-center">
               <span className="block mb-2">
                 Looking for bulk celebration products, trending party items, or custom sourcing from China?
               </span>
@@ -246,7 +246,7 @@ const ContactSection = () => {
           >
             {/* Contact Details Header */}
             <div>
-              <h2 className="heading-md mb-8">
+              <h2 className="md:heading-md heading-sm mb-8">
                 CONTACT DETAILS
               </h2>
               
@@ -260,8 +260,8 @@ const ContactSection = () => {
                       </svg>
                     </div>
                     <div>
-                      <h3 className="heading-xs text-base mb-1">Mehul Shah</h3>
-                      <p className="body-md">Founder, Krushi Impex</p>
+                      <h3 className="md:heading-xs heading-xxs text-base mb-1">Mehul Shah</h3>
+                      <p className="md:body-md body-sm">Founder, Krushi Impex</p>
                     </div>
                   </div>
                 </div>
@@ -278,8 +278,8 @@ const ContactSection = () => {
                       </svg>
                     </div>
                     <div>
-                      <p className="heading-xs text-gray-500 mb-1">WhatsApp</p>
-                      <p className="text-lg font-semibold text-gray-900 group-hover:text-[#2C328C] transition-colors">
+                      <p className="md:heading-xs heading-xxs text-gray-500 mb-1">WhatsApp</p>
+                      <p className="md:body-md body-sm font-semibold text-gray-900 group-hover:text-[#2C328C] transition-colors">
                         +91 7666416997
                       </p>
                     </div>
@@ -298,8 +298,8 @@ const ContactSection = () => {
                       </svg>
                     </div>
                     <div>
-                      <p className="heading-xs text-gray-500 mb-1">Email</p>
-                      <p className="text-lg font-semibold text-[#2C328C] underline group-hover:text-[#F16222] transition-colors">
+                      <p className="md:heading-xs heading-xxs text-gray-500 mb-1">Email</p>
+                      <p className="md:body-md body-sm font-semibold text-[#2C328C] underline group-hover:text-[#F16222] transition-colors">
                         krushiimpex@gmail.com
                       </p>
                     </div>
@@ -315,8 +315,8 @@ const ContactSection = () => {
                       </svg>
                     </div>
                     <div>
-                      <p className=" text-gray-500 mb-1">WeChat ID</p>
-                      <p className="text-lg font-semibold text-gray-900">info_kimpex</p>
+                      <p className="md:heading-xs heading-xxs text-gray-500 mb-1">WeChat ID</p>
+                      <p className="md:body-md body-sm font-semibold text-gray-900">info_kimpex</p>
                     </div>
                   </div>
                 </div>
@@ -334,10 +334,10 @@ const ContactSection = () => {
             }}
           >
             <div className="mb-6">
-              <h2 className="heading-md mb-2">
+              <h2 className="md:heading-md heading-sm mb-2">
                 CONTACT FORM
               </h2>
-              <p className="body-md">Fill out the form below and we'll get back to you soon.</p>
+              <p className="md:body-md body-sm">Fill out the form below and we'll get back to you soon.</p>
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-4">
