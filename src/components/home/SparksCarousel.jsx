@@ -4,6 +4,7 @@ import candlesImg from '../../assets/candles.png';
 import balloonsImg from '../../assets/balloons.png';
 import cakeTopperImg from '../../assets/cake-topper.png';
 import partyDecorImg from '../../assets/decoration-items.webp';
+import partyPropsImg from '../../assets/Led-glasses.jpg';
 import festivalSuppliesImg from '../../assets/flat-lay-with.jpg';
 import eventAccessoriesImg from '../../assets/party-decor.jpg';
 import celebrationLightsImg from '../../assets/Lightings.jpg';
@@ -46,14 +47,23 @@ const defaultSparksData = [
   },
   {
     id: 5,
+    imageSrc: partyPropsImg,
+    title: 'Party Props',
+    description: 'Party Props',
+    count: 120,
+    countLabel: 'Product Variants',
+  },
+  {
+    id: 6,
     imageSrc: festivalSuppliesImg,
     title: 'Festival Supplies',
     description: 'Seasonal Collection',
     count: 120,
     countLabel: 'Product Variants',
   },
+  
   {
-    id: 6,
+    id: 7,
     imageSrc: eventAccessoriesImg,
     title: 'Event Accessories',
     description: 'Premium Range',
@@ -61,7 +71,7 @@ const defaultSparksData = [
     countLabel: 'Product Variants',
   },
   {
-    id: 7,
+    id: 8,
     imageSrc: celebrationLightsImg,
     title: 'Celebration Lights',
     description: 'LED Options',
@@ -69,7 +79,7 @@ const defaultSparksData = [
     countLabel: 'Product Variants',
   },
   {
-    id: 8,
+    id: 9,
     imageSrc: partyFavorsImg,
     title: 'Party Favors',
     description: 'Gift Sets',
