@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 
 export function FeaturesSectionWithHoverEffects({
-  title = "WHO WE SERVE",
+  title = "WHO WE SERVE ?",
   subtitle = "Built for India's Celebration Businesses.",
   features = [
     {

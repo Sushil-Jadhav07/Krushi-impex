@@ -150,7 +150,7 @@ const SparksCarousel = ({
               </h2>
               <p 
                 className="text-base md:text-lg text-gray-600"
-                style={{ fontFamily: 'Bahnschrift, sans-serif' }}
+                style={{ fontFamily: 'Montserrat, sans-serif' }}
               >
                 {subtitle}
               </p>
@@ -158,7 +158,7 @@ const SparksCarousel = ({
             <a 
               href="#" 
               className="hidden md:flex items-center gap-2 text-[#F16222] font-semibold hover:text-[#D95C2F] transition-colors group"
-              style={{ fontFamily: 'Bahnschrift, sans-serif' }}
+              style={{ fontFamily: 'Montserrat, sans-serif' }}
             >
               View All
               <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -197,7 +197,7 @@ const SparksCarousel = ({
                     
                     {/* Count Badge */}
                     <div className="absolute top-4 right-4 bg-[#F16222] text-white px-3 py-1 rounded-full text-sm font-bold shadow-lg"
-                      style={{ fontFamily: 'Bahnschrift, sans-serif' }}
+                      style={{ fontFamily: 'Montserrat, sans-serif' }}
                     >
                       {item.count}+
                     </div>
@@ -214,7 +214,7 @@ const SparksCarousel = ({
                     
                     <p 
                       className="text-sm text-gray-600 mb-4 line-clamp-1"
-                      style={{ fontFamily: 'Bahnschrift, sans-serif' }}
+                      style={{ fontFamily: 'Montserrat, sans-serif' }}
                     >
                       {item.description}
                     </p>
@@ -225,7 +225,7 @@ const SparksCarousel = ({
                         <div>
                           <p 
                             className="text-xs uppercase tracking-wider text-gray-500 mb-1"
-                            style={{ fontFamily: 'Bahnschrift, sans-serif' }}
+                            style={{ fontFamily: 'Montserrat, sans-serif' }}
                           >
                             {item.countLabel}
                           </p>
@@ -274,7 +274,7 @@ const SparksCarousel = ({
           <a 
             href="#" 
             className="flex items-center gap-2 text-[#F16222] font-semibold hover:text-[#D95C2F] transition-colors"
-            style={{ fontFamily: 'Bahnschrift, sans-serif' }}
+            style={{ fontFamily: 'Montserrat, sans-serif' }}
           >
             View All Products
             <ChevronRight className="w-5 h-5" />

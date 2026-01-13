@@ -165,7 +165,7 @@ const Testimonials = () => {
                       {/* Quote */}
                       <p 
                         className="text-gray-600 text-sm md:text-base leading-relaxed flex-grow"
-                        style={{ fontFamily: 'Bahnschrift, sans-serif' }}
+                        style={{ fontFamily: 'Montserrat, sans-serif' }}
                       >
                         {testimonial.quote}
                       </p>
@@ -174,7 +174,7 @@ const Testimonials = () => {
                       <div className="flex flex-row gap-2 text-xs md:text-sm items-center mt-4 pt-4 border-t border-gray-100">
                         <span 
                           className="text-gray-500"
-                          style={{ fontFamily: 'Bahnschrift, sans-serif' }}
+                          style={{ fontFamily: 'Montserrat, sans-serif' }}
                         >
                           By
                         </span>
@@ -188,14 +188,14 @@ const Testimonials = () => {
                         
                         <span 
                           className="font-semibold text-gray-800"
-                          style={{ fontFamily: 'Bahnschrift, sans-serif' }}
+                          style={{ fontFamily: 'Montserrat, sans-serif' }}
                         >
                           {testimonial.name}
                         </span>
                         
                         <span 
                           className="text-gray-500 hidden sm:inline"
-                          style={{ fontFamily: 'Bahnschrift, sans-serif' }}
+                          style={{ fontFamily: 'Montserrat, sans-serif' }}
                         >
                           {testimonial.company}
                         </span>
@@ -204,7 +204,7 @@ const Testimonials = () => {
                       {/* Company name on mobile (below) */}
                       <span 
                         className="text-gray-500 text-xs sm:hidden"
-                        style={{ fontFamily: 'Bahnschrift, sans-serif' }}
+                        style={{ fontFamily: 'Montserrat, sans-serif' }}
                       >
                         {testimonial.company}
                       </span>

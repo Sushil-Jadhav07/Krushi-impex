@@ -100,7 +100,7 @@ const AboutHeroSection = () => {
                   }}
                 >
                    <span className="text-[#F16222] text-sm md:text-base font-semibold uppercase tracking-wider">
-                    WELCOME TO KRUSHI IMPEX
+                    WELCOME TO 
                   </span>
                 </div>
 
@@ -113,8 +113,7 @@ const AboutHeroSection = () => {
                     transition: 'all 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.4s'
                   }}
                 >
-                  <span className="block">INNOVATIVE</span>
-                  <span className="block">SOLUTIONS</span>
+                  <span className="block">KRUSHI IMPEX</span>
                 </h2>
 
                 {/* Description Paragraph */}
@@ -126,7 +125,7 @@ const AboutHeroSection = () => {
                     transition: 'all 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.5s'
                   }}
                 >
-                  Krushi Impex is a leading B2B import-trading company with over 8 years of experience in sourcing premium celebration and event products from China for the Indian market. We work behind the scenes of India's celebrations, supplying businesses with products that are trending, reliable, and margin-friendly.
+                  Krushi Impex is a leading B2B import–trading company, founded by Mehul Shah, with over 8 years of experience in sourcing premium celebration and event products from China for the Indian market. We work behind the scenes of India’s celebrations, supplying businesses with products that are trending, reliable, and margin-friendly. 
                 </p>
 
                 {/* Read More Button */}

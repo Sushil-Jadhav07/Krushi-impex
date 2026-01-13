@@ -7,8 +7,8 @@ const WhyKrushiImpex = ({
     "Direct sourcing from trusted manufacturers in China",
     "Competitive bulk pricing designed for healthy margins",
     "Ready inventory maintained in India",
-    "Quality-checked products before dispatch",
-    "Fast Pan-India B2B delivery"
+    <>Quality<span style={{ fontFamily: 'Montserrat, sans-serif' }}>-</span>checked products before dispatch</>,
+    <>Fast Pan<span style={{ fontFamily: 'Montserrat, sans-serif' }}>-</span>India B2B delivery</>
   ],
   imageUrl = "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&auto=format&fit=crop&q=80"
 }) => {

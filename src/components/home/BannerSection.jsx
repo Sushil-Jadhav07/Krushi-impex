@@ -57,10 +57,16 @@ const BannerSection = ({
                 }`}
                 style={{ 
                   transitionDelay: '200ms',
-                  fontFamily: 'Conthrax, sans-serif'
+                  fontFamily: 'Conthrax, sans-serif',
+                  wordBreak: 'keep-all'
                 }}
               >
-                {title}
+                {typeof title === 'string' ? title.split("'").map((part, index, array) => (
+                  <React.Fragment key={index}>
+                    {part}
+                    {index < array.length - 1 && <span style={{ fontFamily: 'Montserrat, sans-serif' }}>'</span>}
+                  </React.Fragment>
+                )) : title}
               </h1>
               
               {/* Services Line */}
@@ -70,7 +76,7 @@ const BannerSection = ({
                 }`}
                 style={{ 
                   transitionDelay: '350ms',
-                  fontFamily: 'Bahnschrift, sans-serif'
+                  fontFamily: 'Montserrat, sans-serif'
                 }}
               >
                 {services}
@@ -83,7 +89,7 @@ const BannerSection = ({
                 }`}
                 style={{ 
                   transitionDelay: '500ms',
-                  fontFamily: 'Bahnschrift, sans-serif'
+                  fontFamily: 'Montserrat, sans-serif'
                 }}
               >
                 {description}
@@ -97,21 +103,13 @@ const BannerSection = ({
               }`}
               style={{ transitionDelay: '650ms' }}
             >
-              {/* Get a Quote Button */}
-              <button
-                onClick={handleGetQuote}
-                className="inline-flex items-center justify-center gap-3 bg-white text-[#2C328C] px-6 sm:px-8 py-3.5 sm:py-4 rounded-full font-bold text-sm sm:text-base hover:bg-[#F4F2F2] transition-all duration-300 hover:scale-105 hover:shadow-xl group"
-                style={{ fontFamily: 'Bahnschrift, sans-serif' }}
-              >
-                <FileText size={22} className="group-hover:scale-110 transition-transform" />
-                Get a Quote
-              </button>
+            
 
               {/* WhatsApp Button */}
               <button
                 onClick={handleWhatsApp}
-                className="inline-flex items-center justify-center gap-3 bg-green-500 border-2 border-white text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-full font-bold text-sm sm:text-base transition-all duration-300 hover:scale-105 hover:shadow-xl group"
-                style={{ fontFamily: 'Bahnschrift, sans-serif' }}
+                className="inline-flex items-center justify-center gap-3 bg-green-500 border-2 border-white text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold text-sm sm:text-base transition-all duration-300 hover:scale-105 hover:shadow-xl group"
+                style={{ fontFamily: 'Montserrat, sans-serif' }}
               >
                 <FaWhatsapp size={28} className="group-hover:scale-110 transition-transform" />
                 WhatsApp Us

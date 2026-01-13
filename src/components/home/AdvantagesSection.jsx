@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Video, ClipboardCheck, Flame, Wind, ShieldCheck } from 'lucide-react';
 
-// Feature Item Component
-const FeatureItem = ({ title, index, isActive, onClick }) => {
+// Bento Card Component
+const BentoCard = ({ title, description, icon: Icon, index, className = "" }) => {
   const [isInView, setIsInView] = useState(false);
-  const itemRef = useRef(null);
+  const cardRef = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -12,67 +13,48 @@ const FeatureItem = ({ title, index, isActive, onClick }) => {
           setIsInView(true);
         }
       },
-      { threshold: 0.2 }
+      { threshold: 0.1 }
     );
 
-    if (itemRef.current) {
-      observer.observe(itemRef.current);
+    if (cardRef.current) {
+      observer.observe(cardRef.current);
     }
 
     return () => {
-      if (itemRef.current) {
-        observer.unobserve(itemRef.current);
+      if (cardRef.current) {
+        observer.unobserve(cardRef.current);
       }
     };
   }, []);
 
   return (
     <div
-      ref={itemRef}
-      onClick={onClick}
-      className="group cursor-pointer relative"
+      ref={cardRef}
+      className={`group relative overflow-hidden rounded-3xl bg-white border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-500 ${className}`}
       style={{
         opacity: isInView ? 1 : 0,
-        transform: isInView ? 'translateX(0)' : 'translateX(-30px)',
+        transform: isInView ? 'translateY(0)' : 'translateY(20px)',
         transition: `all 0.6s cubic-bezier(0.16, 1, 0.3, 1) ${index * 100}ms`
       }}
     >
-      {/* Active indicator line */}
-      <div 
-        className={`absolute left-0 top-0 bottom-0 w-1 rounded-full transition-all duration-500 ${
-          isActive ? 'bg-[#2C328C] opacity-100' : 'bg-gray-300 opacity-0 group-hover:opacity-50'
-        }`}
-        style={{
-          transform: isActive ? 'scaleY(1)' : 'scaleY(0.5)',
-          transformOrigin: 'top'
-        }}
-      ></div>
+      <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-[#2C328C]/5 to-transparent rounded-bl-full -mr-16 -mt-16 transition-transform duration-700 group-hover:scale-110"></div>
+      
+      <div className="relative p-8 h-full flex flex-col">
+        {/* Icon Container */}
+        <div className="mb-6 w-14 h-14 rounded-2xl bg-[#2C328C]/5 flex items-center justify-center group-hover:bg-[#2C328C] group-hover:text-white text-[#2C328C] transition-all duration-300 shadow-sm group-hover:shadow-md">
+          <Icon size={28} strokeWidth={1.5} />
+        </div>
 
-      {/* Content */}
-      <div 
-        className={`pl-6 py-6 transition-all duration-300 ${
-          isActive ? 'pr-6' : 'pr-4'
-        }`}
-        style={{
-          transform: isActive ? 'translateX(8px)' : 'translateX(0)'
-        }}
-      >
-        <h3 
-          className={`md:heading-xs heading-xxs transition-colors duration-300 ${
-            isActive ? 'text-gray-900' : 'text-gray-600 group-hover:text-gray-800'
-          }`}
-        >
-          {title}
-        </h3>
+        {/* Content */}
+        <div className="flex-grow">
+          <h3 className="text-gray-900 md:heading-xs heading-xxs mb-3 relative z-10 group-hover:text-[#2C328C] transition-colors duration-300">
+            {title}
+          </h3>
+          <p className="text-gray-600 body-sm relative z-10 group-hover:text-gray-700 transition-colors duration-300">
+            {description}
+          </p>
+        </div>
       </div>
-
-      {/* Hover background */}
-      <div 
-        className="absolute inset-0 bg-[#F4F2F2]/50 rounded-lg -z-10 transition-opacity duration-300"
-        style={{
-          opacity: isActive ? 1 : 0
-        }}
-      ></div>
     </div>
   );
 };
@@ -86,73 +68,50 @@ const AdvantagesSection = ({
     part2: ""
   },
   description = "Every product we supply goes through checks to ensure reliability and performance.",
-  autoplayInterval = 5000, // 5 seconds
   features = [
     {
-      title: "Factory-shared finished goods videos before shipment",
+      title: <>Factory<span style={{ fontFamily: 'Montserrat, sans-serif' }}>-</span>shared pre<span style={{ fontFamily: 'Montserrat, sans-serif' }}>-</span>ship videos</>,
       description: "We receive and review detailed videos from our manufacturing partners showing finished products before they leave the factory, ensuring quality standards are met.",
-      image: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=600&auto=format&fit=crop"
+      icon: Video,
+      className: "md:col-span-2 md:row-span-2 min-h-[320px]"
     },
     {
       title: "Physical inspections after arrival in India",
       description: "Upon arrival in India, every shipment undergoes thorough physical inspection by our quality control team to verify product condition and specifications.",
-      image: "https://images.unsplash.com/photo-1481391319762-47dff72954d9?w=600&auto=format&fit=crop"
+      icon: ClipboardCheck,
+      className: "md:col-span-1 md:row-span-2 min-h-[320px]"
     },
     {
       title: "Candle burn checks",
       description: "All candles are tested for burn quality, ensuring proper wick performance, even melting, and safe burning characteristics before dispatch.",
-      image: "https://images.unsplash.com/photo-1478145046317-39f10e56b5e9?w=600&auto=format&fit=crop"
+      icon: Flame,
+      className: "md:col-span-1 md:row-span-1 min-h-[280px]"
     },
     {
       title: "Balloon inflation tests",
       description: "Balloons undergo inflation testing to verify durability, proper sizing, and air retention capabilities, ensuring they meet our quality standards.",
-      image: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=600&auto=format&fit=crop"
+      icon: Wind,
+      className: "md:col-span-1 md:row-span-1 min-h-[280px]"
     },
     {
       title: "Durability checks for décor items",
       description: "All decorative items are tested for durability, material quality, and structural integrity to ensure they withstand normal use and handling.",
-      image: "https://images.unsplash.com/photo-1481391319762-47dff72954d9?w=600&auto=format&fit=crop"
+      icon: ShieldCheck,
+      className: "md:col-span-1 md:row-span-1 min-h-[280px]"
     }
   ]
 }) => {
-  const [activeIndex, setActiveIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
-  const [imageLoaded, setImageLoaded] = useState(false);
-  const [isPaused, setIsPaused] = useState(false);
-  const intervalRef = useRef(null);
 
   useEffect(() => {
     setIsVisible(true);
   }, []);
 
-  // Autoplay functionality
-  useEffect(() => {
-    if (!isPaused) {
-      intervalRef.current = setInterval(() => {
-        setActiveIndex((prev) => (prev + 1) % features.length);
-      }, autoplayInterval);
-    }
-
-    return () => {
-      if (intervalRef.current) {
-        clearInterval(intervalRef.current);
-      }
-    };
-  }, [isPaused, features.length, autoplayInterval]);
-
-  // Handle manual feature selection
-  const handleFeatureClick = (index) => {
-    setActiveIndex(index);
-    // Pause briefly when user clicks
-    setIsPaused(true);
-    setTimeout(() => setIsPaused(false), 6000);
-  };
-
   return (
     <section className="w-full py-12 sm:py-16 lg:py-24 px-4 sm:px-6 lg:px-8 bg-[#F4F2F2]">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="md:text-center text-left mb-12 sm:mb-16">
+        <div className="md:text-center text-left mb-8">
           {/* Label */}
           <div 
             className="inline-flex items-center gap-2 text-sm text-gray-600 mb-4"
@@ -162,8 +121,6 @@ const AdvantagesSection = ({
               transition: 'all 0.6s cubic-bezier(0.16, 1, 0.3, 1)'
             }}
           >
-            <div className="w-2 h-2 rounded-full bg-[#2C328C]"></div>
-            <span className="uppercase tracking-wider font-medium">{sectionLabel}</span>
           </div>
 
           {/* Main Heading */}
@@ -203,96 +160,15 @@ const AdvantagesSection = ({
           ></div>
         </div>
 
-        {/* Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-          {/* Left Column - Features List */}
-          <div 
-            className="order-2 lg:order-1 space-y-2"
-            onMouseEnter={() => setIsPaused(true)}
-            onMouseLeave={() => setIsPaused(false)}
-          >
-            {features.map((feature, index) => (
-              <FeatureItem
-                key={index}
-                title={feature.title}
-                index={index}
-                isActive={activeIndex === index}
-                onClick={() => handleFeatureClick(index)}
-              />
-            ))}
-          </div>
-
-          {/* Right Column - Image */}
-          <div 
-            className="order-1 lg:order-2 relative"
-            style={{
-              opacity: isVisible ? 1 : 0,
-              transform: isVisible ? 'translateX(0)' : 'translateX(30px)',
-              transition: 'all 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s'
-            }}
-            onMouseEnter={() => setIsPaused(true)}
-            onMouseLeave={() => setIsPaused(false)}
-          >
-            {/* Image Container with rounded corners */}
-            <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
-              {/* Loading placeholder */}
-              <div className="absolute inset-0 bg-gradient-to-br from-gray-100 to-gray-200 animate-pulse"></div>
-              
-              {/* Main Image */}
-              {features.map((feature, index) => (
-                <div
-                  key={index}
-                  className="absolute inset-0 transition-opacity duration-700"
-                  style={{
-                    opacity: activeIndex === index ? 1 : 0,
-                    zIndex: activeIndex === index ? 1 : 0
-                  }}
-                >
-                  <img
-                    src={feature.image}
-                    alt={feature.title}
-                    className="w-full h-full object-cover"
-                    onLoad={() => setImageLoaded(true)}
-                  />
-                </div>
-              ))}
-
-              {/* Decorative gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-[#2C328C]/10 via-transparent to-[#2C328C]/5 pointer-events-none"></div>
-            </div>
-
-            {/* Decorative floating elements */}
-            <div className="absolute -z-10 -inset-8">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-[#2C328C]/20 rounded-full blur-3xl animate-premium-float"></div>
-              <div className="absolute bottom-0 left-0 w-40 h-40 bg-[#2C328C]/10 rounded-full blur-3xl animate-premium-float" style={{ animationDelay: '1s' }}></div>
-            </div>
-
-            {/* Progress indicators */}
-            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-10">
-              {features.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => handleFeatureClick(index)}
-                  className="group relative"
-                  aria-label={`Go to feature ${index + 1}`}
-                >
-                  {/* Background bar */}
-                  <div className="w-12 h-1 bg-white/30 rounded-full overflow-hidden backdrop-blur-sm">
-                    {/* Progress fill */}
-                    <div 
-                      className="h-full bg-white rounded-full transition-all duration-300"
-                      style={{
-                        width: activeIndex === index ? '100%' : '0%',
-                        transition: activeIndex === index && !isPaused 
-                          ? `width ${autoplayInterval}ms linear` 
-                          : 'width 0.3s ease-out'
-                      }}
-                    ></div>
-                  </div>
-                </button>
-              ))}
-            </div>
-          </div>
+        {/* Bento Grid Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[minmax(200px,auto)]">
+          {features.map((feature, index) => (
+            <BentoCard
+              key={index}
+              {...feature}
+              index={index}
+            />
+          ))}
         </div>
       </div>
     </section>

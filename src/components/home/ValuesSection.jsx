@@ -1,47 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-
-// Icon Components
-const GlobeIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <circle cx="12" cy="12" r="10"></circle>
-    <line x1="2" y1="12" x2="22" y2="12"></line>
-    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-  </svg>
-);
-
-const DollarIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <line x1="12" y1="1" x2="12" y2="23"></line>
-    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-  </svg>
-);
-
-const WarehouseIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M22 8.35V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8.35"></path>
-    <path d="m6 18 6-6 6 6"></path>
-    <path d="M6 14h12"></path>
-    <path d="M2 8.35 12 2l10 6.35"></path>
-  </svg>
-);
-
-const ShieldCheckIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-    <path d="m9 12 2 2 4-4"></path>
-  </svg>
-);
-
-const TruckIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M16 3h5v13h-5"></path>
-    <path d="M14 16H9m-7 0h2"></path>
-    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-    <path d="M6.5 17A2.5 2.5 0 1 1 9 19.5H6.5"></path>
-    <path d="M19 19.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"></path>
-    <path d="M14 13V8a2 2 0 0 0-2-2H4"></path>
-  </svg>
-);
+import { Globe, IndianRupee, Warehouse, ShieldCheck, Truck } from 'lucide-react';
 
 // Value Card Component
 const ValueCard = ({ icon: Icon, title, description, index }) => {
@@ -95,7 +53,7 @@ const ValueCard = ({ icon: Icon, title, description, index }) => {
         <div 
           className="relative flex-shrink-0"
           style={{
-            transform: isHovered ? 'scale(1.1) rotate(5deg)' : 'scale(1) rotate(0deg)',
+            transform: isHovered ? 'scale(1.1)' : 'scale(1) rotate(0deg)',
             transition: 'transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)'
           }}
         >
@@ -111,18 +69,11 @@ const ValueCard = ({ icon: Icon, title, description, index }) => {
           <div 
             className="relative bg-gradient-to-br from-[#2C328C] to-[#2C328C] p-3 rounded-xl shadow-lg"
             style={{
-              boxShadow: isHovered ? '0 10px 30px rgba(59, 130, 246, 0.5)' : '0 4px 10px rgba(59, 130, 246, 0.3)',
               transition: 'box-shadow 0.3s ease-out'
             }}
           >
-            <div 
-              className="text-white"
-              style={{
-                transform: isHovered ? 'rotateY(180deg)' : 'rotateY(0deg)',
-                transition: 'transform 0.6s ease-out'
-              }}
-            >
-              <Icon />
+            <div className="text-white">
+              <Icon size={24} />
             </div>
           </div>
 
@@ -189,34 +140,33 @@ const ValueCard = ({ icon: Icon, title, description, index }) => {
 
 // Main Values Section Component
 const ValuesSection = ({
-  sectionTitle = "Why Choose Us",
   mainHeading = "WHY KRUSHI IMPEX?",
   ctaText = "Get Started",
   ctaHref = "#contact",
   values = [
     {
-      icon: GlobeIcon,
+      icon: Globe,
       title: "Direct sourcing from trusted manufacturers in China",
       description: "We work directly with trusted manufacturers in China, ensuring quality products and competitive pricing for your business."
     },
     {
-      icon: DollarIcon,
+      icon: IndianRupee,
       title: "Competitive bulk pricing designed for healthy margins",
       description: "Our bulk pricing structure is designed to help you maintain healthy profit margins while staying competitive in the market."
     },
     {
-      icon: WarehouseIcon,
+      icon: Warehouse,
       title: "Ready inventory maintained in India",
       description: "We maintain ready inventory in India, ensuring faster delivery times and reduced waiting periods for your orders."
     },
     {
-      icon: ShieldCheckIcon,
-      title: "Quality-checked products before dispatch",
+      icon: ShieldCheck,
+      title: <>Quality<span style={{ fontFamily: 'Montserrat, sans-serif' }}>-</span>checked products before dispatch</>,
       description: "Every product undergoes thorough quality checks before dispatch, ensuring you receive only the best quality items."
     },
     {
-      icon: TruckIcon,
-      title: "Fast Pan-India B2B delivery",
+      icon: Truck,
+      title: <>Fast Pan<span style={{ fontFamily: 'Montserrat, sans-serif' }}>-</span>India B2B delivery</>,
       description: "We offer fast and reliable Pan-India B2B delivery services, ensuring your products reach you on time, every time."
     }
   ]
@@ -262,10 +212,7 @@ const ValuesSection = ({
                 transition: 'all 0.6s cubic-bezier(0.16, 1, 0.3, 1)'
               }}
             >
-              <div className="flex items-center gap-2 text-sm text-gray-600 mb-2">
-                 <div className="w-8 h-px bg-gradient-to-r from-[#2C328C] to-transparent"></div>
-                <span className="uppercase tracking-wider font-medium">{sectionTitle}</span>
-              </div>
+              
             </div>
 
             {/* Main Heading */}

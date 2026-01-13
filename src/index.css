@@ -139,7 +139,7 @@
   }
 
   body {
-    font-family: 'Bahnschrift', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     color: var(--brand-black);
     background-color: var(--brand-off-white);
     font-weight: 400;
@@ -158,12 +158,16 @@
   }
 
   h2 {
-    font-family: 'Conthrax',  sans-serif;
-    font-size: 105px;
-    font-weight: 600;
-    color: var(--brand-primary-blue);
-    line-height: 1.2;
-    letter-spacing: -0.02em;
+  font-family: 'Conthrax', sans-serif;
+  font-size: 105px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+
+  font-kerning: none;
+  font-variant-ligatures: none;
+  -webkit-font-feature-settings: "kern" 0, "liga" 0, "clig" 0;
+
   }
 
   h3 {
@@ -262,14 +266,14 @@
 
   /* Body Utilities */
   .body-xl {
-    font-family: 'Bahnschrift', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 24px;
     font-weight: 400;
     color: var(--brand-black);
     line-height: 1.6;
   }
   .body-lg {
-    font-family: 'Bahnschrift', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 18px;
     font-weight: 400;
     color: var(--brand-black);
@@ -277,7 +281,7 @@
   }
 
   .body-md {
-    font-family: 'Bahnschrift', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     font-weight: 400;
     color: var(--brand-black);
@@ -285,7 +289,7 @@
   }
 
   .body-sm {
-    font-family: 'Bahnschrift', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 14px;
     font-weight: 400;
     color: var(--brand-black);
@@ -293,7 +297,7 @@
   }
 
   .body-xs {
-    font-family: 'Bahnschrift', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 12px;
     font-weight: 400;
     color: var(--brand-black);
@@ -301,7 +305,7 @@
   }
 
   .body-xxs {
-    font-family: 'Bahnschrift', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 10px;
     font-weight: 400;
     color: var(--brand-black);
@@ -576,4 +580,3 @@
     display: none;
   }
 }
-

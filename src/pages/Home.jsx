@@ -30,14 +30,20 @@ function Home() {
         style={{ fontFamily: 'Conthrax, sans-serif' }}
       />
       {/* <HeroSection /> */}
-      <ProductCategories />
+      <div id="products">
+        <ProductCategories />
+      </div>
       <SparksCarousel />
       {/* <LandingAccordionItem /> */}
-      <section className="w-full px-4 sm:px-6 lg:px-8 py-8 md:py-16 bg-white">
+      <section id="who-we-serve" className="w-full px-4 sm:px-6 lg:px-8 py-8 md:py-16 bg-white">
         <FeaturesSectionWithHoverEffects />
       </section>
-      <AdvantagesSection />
-      <ValuesSection />
+      <div id="quality">
+        <AdvantagesSection />
+      </div>
+      <div id="why-us">
+        <ValuesSection />
+      </div>
       <Testimonials />
       <PremiumCTASection />
       <Footer onWhatsAppClick={handleWhatsApp} />

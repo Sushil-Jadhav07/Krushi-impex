@@ -46,7 +46,12 @@ const HeroSection = ({
               }`}
               style={{ transitionDelay: '350ms' }}
             >
-              {title}
+              {typeof title === 'string' ? title.split("'").map((part, index, array) => (
+                <React.Fragment key={index}>
+                  {part}
+                  {index < array.length - 1 && <span style={{ fontFamily: 'Montserrat, sans-serif' }}>'</span>}
+                </React.Fragment>
+              )) : title}
             </h1>
             
             <div 

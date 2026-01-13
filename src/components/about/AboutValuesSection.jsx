@@ -1,47 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-
-// Icon Components
-const GlobeIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <circle cx="12" cy="12" r="10"></circle>
-    <line x1="2" y1="12" x2="22" y2="12"></line>
-    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-  </svg>
-);
-
-const DollarIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <line x1="12" y1="1" x2="12" y2="23"></line>
-    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-  </svg>
-);
-
-const WarehouseIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M22 8.35V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8.35"></path>
-    <path d="m6 18 6-6 6 6"></path>
-    <path d="M6 14h12"></path>
-    <path d="M2 8.35 12 2l10 6.35"></path>
-  </svg>
-);
-
-const ShieldCheckIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-    <path d="m9 12 2 2 4-4"></path>
-  </svg>
-);
-
-const TruckIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M16 3h5v13h-5"></path>
-    <path d="M14 16H9m-7 0h2"></path>
-    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-    <path d="M6.5 17A2.5 2.5 0 1 1 9 19.5H6.5"></path>
-    <path d="M19 19.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"></path>
-    <path d="M14 13V8a2 2 0 0 0-2-2H4"></path>
-  </svg>
-);
+import { Globe, IndianRupee, Warehouse, ShieldCheck, Truck } from 'lucide-react';
 
 // Value Card Component
 const ValueCard = ({ icon: Icon, title, description, index }) => {
@@ -111,14 +69,13 @@ const ValueCard = ({ icon: Icon, title, description, index }) => {
           <div 
             className="relative bg-gradient-to-br from-[#2C328C] to-[#2C328C] p-3 rounded-xl shadow-lg"
             style={{
-              boxShadow: isHovered ? '0 10px 30px rgba(59, 130, 246, 0.5)' : '0 4px 10px rgba(59, 130, 246, 0.3)',
               transition: 'box-shadow 0.3s ease-out'
             }}
           >
             <div 
               className="text-white"
               style={{
-                transform: isHovered ? 'rotateY(180deg)' : 'rotateY(0deg)',
+                transform: isHovered ? 'rotateY(0deg)' : 'rotateY(0deg)',
                 transition: 'transform 0.6s ease-out'
               }}
             >
@@ -189,28 +146,27 @@ const ValueCard = ({ icon: Icon, title, description, index }) => {
 
 // Main Values Section Component
 const AboutValuesSection = ({
-  sectionTitle = "Our Services",
   mainHeading = "WHAT WE DO?",
   ctaText = "Get Started",
   ctaHref = "#contact",
   values = [
     {
-      icon: GlobeIcon,
+      icon: Globe,
       title: "Importing celebration and event products from China",
       description: "We specialize in importing high-quality celebration and event products directly from trusted manufacturers in China, ensuring the latest trends and best prices for the Indian market."
     },
     {
-      icon: WarehouseIcon,
+      icon: Warehouse,
       title: "Maintaining a ready inventory in India",
       description: "We maintain a comprehensive ready inventory in India, ensuring faster delivery times and reduced waiting periods for your orders."
     },
     {
-      icon: DollarIcon,
-      title: "Supplying India's complete B2B chain",
+      icon: IndianRupee,
+      title: <>Supplying India<span style={{ fontFamily: 'Montserrat, sans-serif' }}>'</span>s complete B2B chain</>,
       description: "We supply products across India's complete B2B chain, from wholesalers to retailers, bakeries, and event businesses, ensuring seamless distribution."
     },
     {
-      icon: TruckIcon,
+      icon: Truck,
       title: "Supporting businesses with competitive sourcing and fast delivery",
       description: "We support businesses with competitive sourcing strategies and fast delivery services, helping you maintain healthy margins while meeting customer demands."
     }
@@ -257,15 +213,12 @@ const AboutValuesSection = ({
                 transition: 'all 0.6s cubic-bezier(0.16, 1, 0.3, 1)'
               }}
             >
-              <div className="flex items-center gap-2 text-sm text-gray-600 mb-2">
-                 <div className="w-8 h-px bg-gradient-to-r from-[#2C328C] to-transparent"></div>
-                <span className="uppercase tracking-wider font-medium">{sectionTitle}</span>
-              </div>
+              
             </div>
 
             {/* Main Heading */}
             <h2 
-              className="md:heading-lg heading-md mb-2 "
+              className="md:heading-lg heading-md mb-6 "
               style={{
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
@@ -274,18 +227,6 @@ const AboutValuesSection = ({
             >
               {mainHeading}
             </h2>
-
-            {/* Introductory Text */}
-            <p 
-              className="text-base sm:text-lg text-gray-600 md:mb-6 mb-4"
-              style={{
-                opacity: isVisible ? 1 : 0,
-                transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
-                transition: 'all 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.15s'
-              }}
-            >
-              We specialize in:
-            </p>
 
             {/* CTA Button */}
             <div
@@ -343,4 +284,3 @@ const AboutValuesSection = ({
 };
 
 export default AboutValuesSection;
-

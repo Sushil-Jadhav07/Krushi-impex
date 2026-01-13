@@ -1,5 +1,9 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { TrendingUp, ChevronLeft, ChevronRight } from 'lucide-react';
+import candlesImg from '../../assets/candles.png';
+import balloonsImg from '../../assets/balloons.png';
+import cakeTopperImg from '../../assets/cake-topper.png';
+import partyDecorImg from '../../assets/party-decor.png';
 
 const ProductsRangeSection = () => {
   const [currentSlide, setCurrentSlide] = useState(1); // Start at 1 because we have a duplicate at the beginning
@@ -11,22 +15,22 @@ const ProductsRangeSection = () => {
     {
       title: 'Birthday Candles',
       subtitle: '(Top-Selling Category)',
-      image: 'https://images.unsplash.com/photo-1558636508-e0db3814bd1d?w=400&h=500&fit=crop'
+      image: candlesImg
     },
     {
       title: 'Balloons',
       subtitle: '',
-      image: 'https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=400&h=500&fit=crop'
+      image: balloonsImg
     },
     {
       title: 'Cake Toppers',
       subtitle: '',
-      image: 'https://images.unsplash.com/photo-1478145046317-39f10e56b5e9?w=600&auto=format&fit=crop'
+      image: cakeTopperImg
     },
     {
-      title: 'Party Décor Items',
+      title: 'Party Decor Items',
       subtitle: 'for birthdays, anniversaries, and festivals',
-      image: 'https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=400&h=500&fit=crop'
+      image: partyDecorImg
     }
   ];
 
@@ -128,7 +132,7 @@ const ProductsRangeSection = () => {
         {/* Description */}
         <p 
           className="text-base md:text-lg text-gray-700 mb-8 max-w-4xl leading-relaxed"
-          style={{ fontFamily: 'Bahnschrift, sans-serif' }}
+          style={{ fontFamily: 'Montserrat, sans-serif' }}
         >
           We import and supply high-demand celebration products used across birthdays, festivals, and events. Our inventory evolves based on market trends and seasonal demand.
         </p>
@@ -171,7 +175,7 @@ const ProductsRangeSection = () => {
                       {/* Badge for Top-Selling */}
                       {isFirstItem && (
                         <div className="absolute top-4 right-4 bg-[#F16222] text-white px-3 py-1 rounded-full text-xs font-bold"
-                          style={{ fontFamily: 'Bahnschrift, sans-serif' }}
+                          style={{ fontFamily: 'Montserrat, sans-serif' }}
                         >
                           TOP SELLING
                         </div>
@@ -190,7 +194,7 @@ const ProductsRangeSection = () => {
                     {category.subtitle && (
                       <p 
                         className="text-sm text-gray-600 italic text-center"
-                        style={{ fontFamily: 'Bahnschrift, sans-serif' }}
+                        style={{ fontFamily: 'Montserrat, sans-serif' }}
                       >
                         {category.subtitle}
                       </p>
@@ -252,7 +256,7 @@ const ProductsRangeSection = () => {
                 {/* Badge for Top-Selling */}
                 {index === 0 && (
                   <div className="absolute top-4 right-4 bg-[#F16222] text-white px-3 py-1 rounded-full text-xs font-bold"
-                    style={{ fontFamily: 'Bahnschrift, sans-serif' }}
+                    style={{ fontFamily: 'Montserrat, sans-serif' }}
                   >
                     TOP SELLING
                   </div>
@@ -271,7 +275,7 @@ const ProductsRangeSection = () => {
               {category.subtitle && (
                 <p 
                   className="text-sm text-gray-600 italic"
-                  style={{ fontFamily: 'Bahnschrift, sans-serif' }}
+                  style={{ fontFamily: 'Montserrat, sans-serif' }}
                 >
                   {category.subtitle}
                 </p>
@@ -284,7 +288,7 @@ const ProductsRangeSection = () => {
         <div className="bg-gradient-to-r from-[#2C328C] to-[#F16222] rounded-2xl p-6 md:p-8">
           <p 
             className="text-white text-center text-base md:text-lg italic"
-            style={{ fontFamily: 'Bahnschrift, sans-serif' }}
+            style={{ fontFamily: 'Montserrat, sans-serif' }}
           >
             Product availability changes frequently. Contact us for the latest items and pricing.
           </p>
