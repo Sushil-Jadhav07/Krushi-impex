@@ -1,11 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronRight, ChevronLeft, Package } from 'lucide-react';
+import candlesImg from '../../assets/candles.png';
+import balloonsImg from '../../assets/balloons.png';
+import cakeTopperImg from '../../assets/cake-topper.png';
+import partyDecorImg from '../../assets/decoration-items.webp';
+import festivalSuppliesImg from '../../assets/flat-lay-with.jpg';
+import eventAccessoriesImg from '../../assets/party-decor.jpg';
+import celebrationLightsImg from '../../assets/Lightings.jpg';
+import partyFavorsImg from '../../assets/party-items1.jpg';
+
 
 // Sample data for Sparks Carousel
 const defaultSparksData = [
   {
     id: 1,
-    imageSrc: 'https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=600&auto=format&fit=crop',
+    imageSrc: candlesImg,
     title: 'Birthday Candles Collection',
     description: 'Premium Quality',
     count: 150,
@@ -13,7 +22,7 @@ const defaultSparksData = [
   },
   {
     id: 2,
-    imageSrc: 'https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=600&auto=format&fit=crop',
+    imageSrc: balloonsImg,
     title: 'Balloons',
     description: 'Latex & Foil Options',
     count: 200,
@@ -21,7 +30,7 @@ const defaultSparksData = [
   },
   {
     id: 3,
-    imageSrc: 'https://images.unsplash.com/photo-1481391319762-47dff72954d9?w=600&auto=format&fit=crop',
+    imageSrc: cakeTopperImg,
     title: 'Cake Toppers',
     description: 'Elegant Designs',
     count: 85,
@@ -29,15 +38,15 @@ const defaultSparksData = [
   },
   {
     id: 4,
-    imageSrc: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=600&auto=format&fit=crop',
-    title: 'Party Décor',
+    imageSrc: partyDecorImg,
+    title: 'Party Decor',
     description: 'Complete Solutions',
     count: 300,
     countLabel: 'Product Variants',
   },
   {
     id: 5,
-    imageSrc: 'https://images.unsplash.com/photo-1481391319762-47dff72954d9?w=600&auto=format&fit=crop',
+    imageSrc: festivalSuppliesImg,
     title: 'Festival Supplies',
     description: 'Seasonal Collection',
     count: 120,
@@ -45,7 +54,7 @@ const defaultSparksData = [
   },
   {
     id: 6,
-    imageSrc: 'https://images.unsplash.com/photo-1478145046317-39f10e56b5e9?w=600&auto=format&fit=crop',
+    imageSrc: eventAccessoriesImg,
     title: 'Event Accessories',
     description: 'Premium Range',
     count: 95,
@@ -53,7 +62,7 @@ const defaultSparksData = [
   },
   {
     id: 7,
-    imageSrc: 'https://images.unsplash.com/photo-1513151233558-d860c5398176?w=600&auto=format&fit=crop',
+    imageSrc: celebrationLightsImg,
     title: 'Celebration Lights',
     description: 'LED Options',
     count: 75,
@@ -61,7 +70,7 @@ const defaultSparksData = [
   },
   {
     id: 8,
-    imageSrc: 'https://images.unsplash.com/photo-1464347601390-25e2842a456b?w=600&auto=format&fit=crop',
+    imageSrc: partyFavorsImg,
     title: 'Party Favors',
     description: 'Gift Sets',
     count: 110,
@@ -183,7 +192,7 @@ const SparksCarousel = ({
               >
                 <div className="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 h-full flex flex-col">
                   {/* Image Container */}
-                  <div className="relative aspect-video overflow-hidden bg-gray-100">
+                  <div className="relative aspect-[5/6] overflow-hidden bg-gray-100">
                     <img
                       src={item.imageSrc}
                       alt={item.title}
