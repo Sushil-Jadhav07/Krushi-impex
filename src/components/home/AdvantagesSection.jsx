@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Video, ClipboardCheck, Flame, Wind, ShieldCheck } from 'lucide-react';
 
 // Bento Card Component
-const BentoCard = ({ title, description, icon: Icon, index, className = "" }) => {
+const BentoCard = ({ title, description, icon: Icon, index, className = "", isCenter = false }) => {
   const [isInView, setIsInView] = useState(false);
   const cardRef = useRef(null);
 
@@ -39,14 +39,14 @@ const BentoCard = ({ title, description, icon: Icon, index, className = "" }) =>
     >
       <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-[#2C328C]/5 to-transparent rounded-bl-full -mr-16 -mt-16 transition-transform duration-700 group-hover:scale-110"></div>
       
-      <div className="relative p-8 h-full flex flex-col">
+      <div className={`relative p-8 h-full flex flex-col md:items-center md:align-center md:justify-center md:text-center `}>
         {/* Icon Container */}
         <div className="mb-6 w-14 h-14 rounded-2xl bg-[#2C328C]/5 flex items-center justify-center group-hover:bg-[#2C328C] group-hover:text-white text-[#2C328C] transition-all duration-300 shadow-sm group-hover:shadow-md">
           <Icon size={28} strokeWidth={1.5} />
         </div>
 
         {/* Content */}
-        <div className="flex-grow">
+        <div className="">
           <h3 className="text-gray-900 md:heading-xs heading-xxs mb-3 relative z-10 group-hover:text-[#2C328C] transition-colors duration-300">
             {title}
           </h3>
@@ -72,32 +72,27 @@ const AdvantagesSection = ({
     {
       title: <>Factory<span style={{ fontFamily: 'Montserrat, sans-serif' }}>-</span>shared pre<span style={{ fontFamily: 'Montserrat, sans-serif' }}>-</span>ship videos</>,
       description: "We receive and review detailed videos from our manufacturing partners showing finished products before they leave the factory, ensuring quality standards are met.",
-      icon: Video,
-      className: "md:col-span-2 md:row-span-2 min-h-[320px]"
+      icon: Video
     },
     {
       title: "Physical inspections after arrival in India",
       description: "Upon arrival in India, every shipment undergoes thorough physical inspection by our quality control team to verify product condition and specifications.",
-      icon: ClipboardCheck,
-      className: "md:col-span-1 md:row-span-2 min-h-[320px]"
+      icon: ClipboardCheck
     },
     {
       title: "Candle burn checks",
       description: "All candles are tested for burn quality, ensuring proper wick performance, even melting, and safe burning characteristics before dispatch.",
-      icon: Flame,
-      className: "md:col-span-1 md:row-span-1 min-h-[280px]"
+      icon: Flame
     },
     {
       title: "Balloon inflation tests",
       description: "Balloons undergo inflation testing to verify durability, proper sizing, and air retention capabilities, ensuring they meet our quality standards.",
-      icon: Wind,
-      className: "md:col-span-1 md:row-span-1 min-h-[280px]"
+      icon: Wind
     },
     {
       title: "Durability checks for décor items",
       description: "All decorative items are tested for durability, material quality, and structural integrity to ensure they withstand normal use and handling.",
-      icon: ShieldCheck,
-      className: "md:col-span-1 md:row-span-1 min-h-[280px]"
+      icon: ShieldCheck
     }
   ]
 }) => {
@@ -160,15 +155,35 @@ const AdvantagesSection = ({
           ></div>
         </div>
 
-        {/* Bento Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[minmax(200px,auto)]">
-          {features.map((feature, index) => (
-            <BentoCard
-              key={index}
-              {...feature}
-              index={index}
-            />
-          ))}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[minmax(220px,auto)]">
+          {features.map((feature, index) => {
+            let layoutClass = "";
+            const isCenter = features.length === 5 && index === 0;
+
+            if (features.length === 5) {
+              if (index === 0) {
+                layoutClass = "md:col-start-2 md:row-span-2 md:min-h-[320px]";
+              } else if (index === 1) {
+                layoutClass = "md:col-start-1 md:row-start-1 md:min-h-[260px]";
+              } else if (index === 2) {
+                layoutClass = "md:col-start-1 md:row-start-2 md:min-h-[260px]";
+              } else if (index === 3) {
+                layoutClass = "md:col-start-3 md:row-start-1 md:min-h-[260px]";
+              } else if (index === 4) {
+                layoutClass = "md:col-start-3 md:row-start-2 md:min-h-[260px]";
+              }
+            }
+
+            return (
+              <BentoCard
+                key={index}
+                {...feature}
+                className={layoutClass}
+                isCenter={isCenter}
+                index={index}
+              />
+            );
+          })}
         </div>
       </div>
     </section>

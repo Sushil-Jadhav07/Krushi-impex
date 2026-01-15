@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 
 const PremiumCTASection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -92,11 +93,12 @@ const PremiumCTASection = () => {
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              
-
-                <a href="/contact" className="text-center btn-secondary w-full sm:w-auto px-8 py-4 bg-gray-100 text-gray-900 font-semibold rounded-full border border-gray-300 text-base md:text-lg hover:bg-gray-200">
+                <Link
+                  to="/contact"
+                  className="text-center btn-secondary w-full sm:w-auto px-8 py-4 bg-gray-100 text-gray-900 font-semibold rounded-full border border-gray-300 text-base md:text-lg hover:bg-gray-200"
+                >
                   <span className="text-gray-900">Contact Us</span>
-                </a>
+                </Link>
               </div>
 
             </div>

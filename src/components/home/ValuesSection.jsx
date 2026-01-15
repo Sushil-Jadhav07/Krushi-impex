@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { Globe, IndianRupee, Warehouse, ShieldCheck, Truck } from 'lucide-react';
 
 // Value Card Component
@@ -142,7 +143,7 @@ const ValueCard = ({ icon: Icon, title, description, index }) => {
 const ValuesSection = ({
   mainHeading = "WHY KRUSHI IMPEX?",
   ctaText = "Get Started",
-  ctaHref = "#contact",
+  ctaHref = "/contact",
   values = [
     {
       icon: Globe,
@@ -235,8 +236,8 @@ const ValuesSection = ({
                 transition: 'all 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.2s'
               }}
             >
-              <a
-                href={ctaHref}
+              <Link
+                to={ctaHref}
                 className="group inline-flex items-center gap-3 bg-gray-900 text-white px-8 py-4 rounded-full font-semibold text-sm sm:text-base hover:bg-gray-800 transition-all duration-300 hover:scale-105 hover:shadow-2xl"
               >
                 <span>{ctaText}</span>
@@ -248,7 +249,7 @@ const ValuesSection = ({
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
-              </a>
+              </Link>
             </div>
 
             {/* Decorative floating elements */}
