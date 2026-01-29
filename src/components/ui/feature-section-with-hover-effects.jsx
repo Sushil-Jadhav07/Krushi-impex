@@ -57,24 +57,31 @@ export function FeaturesSectionWithHoverEffects({
   ]
 }) {
   return (
-    <div className="w-full max-w-7xl mx-auto">
-      {/* Title and Subtitle Section */}
-      <div className="md:text-center text-left mb-4 px-0 md:px-4">
-        <h2 className="md:heading-lg heading-base mb-4 sm:mb-6">
-          {title}
-        </h2>
-        <p className="body-lg max-w-3xl mx-auto">
-          {subtitle}
-        </p>
-      </div>
+    <section className="w-full">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative overflow-hidden rounded-3xl border border-slate-200/80 bg-gradient-to-b from-white via-white to-slate-50/70 shadow-[0_25px_70px_-40px_rgba(15,23,42,0.35)]">
+          <div className="pointer-events-none absolute -top-24 -right-16 h-64 w-64 rounded-full bg-primary-orange/30 blur-3xl" />
+          <div className="pointer-events-none absolute -bottom-24 -left-16 h-64 w-64 rounded-full bg-primary-blue/25 blur-3xl" />
 
-      {/* Features Grid */}
-      <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 relative z-10 md:py-10 py-6">
-        {features.map((feature, index) => (
-          <Feature key={feature.title} {...feature} index={index} />
-        ))}
+          {/* Title and Subtitle Section */}
+          <div className="relative z-10 md:text-center text-left mb-2 px-4 md:px-10 pt-10 md:pt-12">
+            <h2 className="md:heading-lg heading-base mb-4 sm:mb-6 !text-primary-orange">
+              {title}
+            </h2>
+            <p className="body-lg max-w-3xl mx-auto text-slate-600">
+              {subtitle}
+            </p>
+          </div>
+
+          {/* Features Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 relative z-10 md:py-10 py-6">
+            {features.map((feature, index) => (
+              <Feature key={feature.title} {...feature} index={index} />
+            ))}
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
 
@@ -87,31 +94,40 @@ const Feature = ({
   return (
     <div
       className={cn(
-        "flex flex-col lg:border-r py-6 md:py-10 relative group/feature border-gray-200",
-        (index === 0 || index === 4) && "lg:border-l border-gray-200",
-        index < 4 && "lg:border-b border-gray-200",
-        index % 2 === 0 && "md:border-r-0 border-r border-gray-200"
+        "flex flex-col lg:border-r py-6 md:py-10 relative group/feature border-slate-200/80",
+        (index === 0 || index === 4) && "lg:border-l border-slate-200/80",
+        index < 4 && "lg:border-b border-slate-200/80",
+        index % 2 === 0 && "md:border-r-0 border-r border-slate-200/80"
       )}
     >
       {index < 4 && (
-        <div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-t from-gray-100 to-transparent pointer-events-none" />
+        <div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-t from-slate-100/80 to-transparent pointer-events-none" />
       )}
       {index >= 4 && (
-        <div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-b from-gray-100 to-transparent pointer-events-none" />
+        <div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-b from-slate-100/80 to-transparent pointer-events-none" />
       )}
-      <div className="mb-4 relative z-10 px-4 md:px-10 text-gray-600">
-        <Icon className="w-6 h-6" />
+      <div className="mb-5 relative z-10 px-4 md:px-10">
+        <div
+          className={cn(
+            "h-12 w-12 rounded-2xl flex items-center justify-center shadow-sm ring-1 ring-black/5 bg-off-white transition-all duration-300 group-hover/feature:-translate-y-1 group-hover/feature:scale-105 group-hover/feature:shadow-[0_0_28px_rgba(241,98,34,0.35)]"
+          )}
+        >
+          <Icon className="w-6 h-6 text-primary-blue" />
+        </div>
       </div>
       <div className="text-lg font-bold mb-2 relative z-10 px-4 md:px-10">
-        <div className="absolute left-0 inset-y-0 h-6 group-hover/feature:h-8 w-1 rounded-tr-full rounded-br-full bg-gray-300 group-hover/feature:bg-[#2C328C] transition-all duration-200 origin-center" />
-        <span className="group-hover/feature:translate-x-2 transition duration-200 inline-block text-gray-800">
+        <div
+          className={cn(
+            "absolute left-0 inset-y-0 h-6 group-hover/feature:h-8 w-1 rounded-tr-full rounded-br-full transition-all duration-200 origin-center bg-primary-orange"
+          )}
+        />
+        <span className="group-hover/feature:translate-x-2 transition duration-200 inline-block text-slate-900">
           {title}
         </span>
       </div>
-      <p className="text-sm text-gray-600 max-w-xs relative z-10 px-4 md:px-10">
+      <p className="text-sm text-slate-600 max-w-xs relative z-10 px-4 md:px-10">
         {description}
       </p>
     </div>
   );
 };
-

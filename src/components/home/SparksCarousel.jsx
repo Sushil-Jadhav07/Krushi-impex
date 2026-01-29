@@ -70,26 +70,11 @@ const defaultSparksData = [
     count: 95,
     countLabel: 'Product Variants',
   },
-  {
-    id: 8,
-    imageSrc: celebrationLightsImg,
-    title: 'Celebration Lights',
-    description: 'LED Options',
-    count: 75,
-    countLabel: 'Product Variants',
-  },
-  {
-    id: 9,
-    imageSrc: partyFavorsImg,
-    title: 'Party Favors',
-    description: 'Gift Sets',
-    count: 110,
-    countLabel: 'Product Variants',
-  },
+  
 ];
 
 const SparksCarousel = ({ 
-  title = "Featured Products", 
+  title = "Our Products", 
   subtitle = "Explore our curated collection of celebration products.", 
   items = defaultSparksData 
 }) => {
@@ -174,14 +159,7 @@ const SparksCarousel = ({
                 {subtitle}
               </p>
             </div>
-            <a 
-              href="#" 
-              className="hidden md:flex items-center gap-2 text-[#F16222] font-semibold hover:text-[#D95C2F] transition-colors group"
-              style={{ fontFamily: 'Montserrat, sans-serif' }}
-            >
-              View All
-              <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </a>
+
           </div>
         </div>
 
@@ -288,17 +266,7 @@ const SparksCarousel = ({
           )}
         </div>
 
-        {/* Mobile View All Button */}
-        <div className="mt-8 flex md:hidden justify-center">
-          <a 
-            href="#" 
-            className="flex items-center gap-2 text-[#F16222] font-semibold hover:text-[#D95C2F] transition-colors"
-            style={{ fontFamily: 'Montserrat, sans-serif' }}
-          >
-            View All Products
-            <ChevronRight className="w-5 h-5" />
-          </a>
-        </div>
+        
       </div>
     </section>
   );
