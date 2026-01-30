@@ -148,7 +148,7 @@ const PremiumNavbar = () => {
 
             <div className="hidden md:flex items-center gap-4 flex-shrink-0">
               <a
-                href="https://wa.me/"
+                href="https://wa.me/917666416997"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="relative px-6 py-2.5 bg-green-500 text-white text-sm font-semibold rounded-full hover:bg-green-600 transition-all duration-300 hover:scale-105 hover:shadow-lg flex items-center gap-2 whitespace-nowrap"
@@ -218,7 +218,7 @@ const PremiumNavbar = () => {
           </div>
 
           <a
-            href="https://wa.me/"
+            href="https://wa.me/917666416997"
             target="_blank"
             rel="noopener noreferrer"
             className="block w-full px-6 py-3 bg-green-500 text-white text-center font-semibold rounded-full hover:bg-green-600 transition-all duration-300"

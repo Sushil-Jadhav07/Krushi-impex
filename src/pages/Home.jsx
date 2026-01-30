@@ -15,7 +15,7 @@ import { LandingAccordionItem } from '../components/home/LandingAccordionItem'
 
 function Home() {
   const handleWhatsApp = () => {
-    window.open('https://wa.me/919876543210', '_blank')
+    window.open('https://wa.me/917666416997', '_blank')
   }
 
   return (
@@ -33,7 +33,7 @@ function Home() {
       <div id="products">
         <ProductCategories />
       </div>
-      <SparksCarousel />
+      {/* <SparksCarousel /> */}
       {/* <LandingAccordionItem /> */}
       <section id="who-we-serve" className="w-full px-4 sm:px-6 lg:px-8 py-8 md:py-16 bg-white">
         <FeaturesSectionWithHoverEffects />

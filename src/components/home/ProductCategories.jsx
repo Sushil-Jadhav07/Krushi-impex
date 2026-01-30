@@ -294,15 +294,7 @@ const ProductsRangeSection = () => {
           </p>
         </div>
 
-        {/* CTA Button */}
-        <div className="flex justify-center mt-10">
-          <button 
-            className="px-8 py-3 bg-[#F16222] text-white rounded-full font-bold hover:bg-[#D95C2F] transition-colors shadow-lg hover:shadow-xl transform hover:scale-105 transition-transform"
-            style={{ fontFamily: 'Conthrax, sans-serif' }}
-          >
-            VIEW FULL CATALOG
-          </button>
-        </div>
+        
       </div>
     </div>
   );

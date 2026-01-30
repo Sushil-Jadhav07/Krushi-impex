@@ -5,7 +5,7 @@ import Footer from '../components/Footer'
 
 function About() {
   const handleWhatsApp = () => {
-    window.open('https://wa.me/919876543210', '_blank')
+    window.open('https://wa.me/917666416997', '_blank')
   }
 
   return (

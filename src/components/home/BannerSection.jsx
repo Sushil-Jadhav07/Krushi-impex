@@ -16,7 +16,7 @@ const BannerSection = ({
   }, []);
 
   const handleWhatsApp = () => {
-    window.open('https://wa.me/919876543210', '_blank');
+    window.open('https://wa.me/917666416997', '_blank');
   };
 
   const handleGetQuote = () => {
