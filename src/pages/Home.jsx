@@ -24,7 +24,7 @@ function Home() {
       <Navbar2 />
       <BannerSection />
       <VelocityScroll 
-        text1="Birthday Candles" 
+        text1="Import " 
         default_velocity={2}
         className="font-bold text-xl md:text-3xl text-[#FFF]"
         style={{ fontFamily: 'Conthrax, sans-serif' }}

@@ -83,16 +83,29 @@ const ParallaxText = ({ children, baseVelocity = 100, className = '' }) => {
 
 // Main Velocity Scroll Component
 const VelocityScroll = ({
-  text1 = "Birthday Candles",
-  text2 = "Balloons",
-  text3 = "Cake Toppers",
-  text4 = "Party Decor Items",
-  separator = "●",
+  text1 = "Import ",
+  text2 = "Sourcing",
+  text3 = "Trading",
+  text4 = "Pan-India B2B Supply",
+  separator = "\u2022",
   default_velocity = 5,
   className = '',
   style = {}
 }) => {
   const texts = [text1, text2, text3, text4].filter(Boolean);
+
+  const renderText = (text) => {
+    const parts = text.split('-');
+    if (parts.length === 1) return text;
+    return parts.map((part, index) => (
+      <React.Fragment key={`${part}-${index}`}>
+        {part}
+        {index < parts.length - 1 && (
+          <span style={{ fontFamily: 'Montserrat, sans-serif' }}>-</span>
+        )}
+      </React.Fragment>
+    ));
+  };
   
   return (
     <div className="bg-black flex items-center justify-center py-8">
@@ -101,7 +114,7 @@ const VelocityScroll = ({
           <span style={style}>
             {texts.map((text, index) => (
               <React.Fragment key={index}>
-                {text}
+                {renderText(text)}
                 {index < texts.length - 1 && <span className="mx-8">{separator}</span>}
               </React.Fragment>
             ))}
