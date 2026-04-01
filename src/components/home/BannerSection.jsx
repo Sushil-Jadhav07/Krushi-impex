@@ -4,9 +4,21 @@ import { FaWhatsapp } from "react-icons/fa6";
 import bannerImage from '../../assets/krushi.png';
 
 const BannerSection = ({
-  title = "India's Celebration Partner",
+  title = (
+    <>
+      India<span style={{ fontFamily: 'Montserrat, sans-serif' }}>'</span>s
+      <br />
+      Celebration Partner
+    </>
+  ),
   services = "Import • Sourcing • Trading • Pan-India B2B Supply",
-  description = "Sourcing trending celebration and event products from China and supplying </br> India's wholesalers, retailers, and event businesses with speed, quality, and reliability.",
+  description = (
+    <>
+      Sourcing trending celebration and event products from China and supplying
+      <br />
+      India&apos;s wholesalers, retailers, and event businesses with speed, quality, and reliability.
+    </>
+  ),
   backgroundImage = bannerImage
 }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -84,7 +96,7 @@ const BannerSection = ({
 
               {/* Description */}
               <p 
-                className={`text-sm md:text-base text-white/90 leading-relaxed max-w-2xl transition-all duration-700 ease-out ${
+                className={`text-sm md:text-base text-white leading-relaxed max-w-3xl transition-all duration-700 ease-out ${
                   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
                 }`}
                 style={{ 
