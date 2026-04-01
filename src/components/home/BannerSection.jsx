@@ -6,7 +6,7 @@ import bannerImage from '../../assets/krushi.png';
 const BannerSection = ({
   title = "India's Celebration Partner",
   services = "Import • Sourcing • Trading • Pan-India B2B Supply",
-  description = "Sourcing trending celebration and event products from China and supplying India's wholesalers, retailers, and event businesses with speed, quality, and reliability.",
+  description = "Sourcing trending celebration and event products from China and supplying </br> India's wholesalers, retailers, and event businesses with speed, quality, and reliability.",
   backgroundImage = bannerImage
 }) => {
   const [isVisible, setIsVisible] = useState(false);
