@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { MessageCircle, FileText } from 'lucide-react';
 import { FaWhatsapp } from "react-icons/fa6";
-import bannerImage from '../../assets/krushi-banner.png';
+import bannerImage from '../../assets/krushi.png';
 
 const BannerSection = ({
   title = "India's Celebration Partner",
@@ -24,11 +24,11 @@ const BannerSection = ({
   };
 
   return (
-    <section className="w-full bg-gray-50 px-4 sm:px-6 lg:px-8 pt-24 pb-8 lg:pt-32 lg:pb-16">
+    <section className="w-full bg-gray-50 px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24">
       <div className="max-w-[1350px] mx-auto">
         {/* Banner Container with rounded corners */}
         <div 
-          className="relative overflow-hidden rounded-3xl sm:rounded-[2.5rem] lg:rounded-[3rem] shadow-2xl"
+          className="relative overflow-hidden rounded-3xl sm:rounded-[2.5rem] lg:rounded-[3rem] shadow-xl"
           style={{ minHeight: '600px' }}
         >
           {/* Background Image */}

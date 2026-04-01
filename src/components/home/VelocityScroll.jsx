@@ -108,7 +108,7 @@ const VelocityScroll = ({
   };
   
   return (
-    <div className="bg-black flex items-center justify-center py-8">
+    <div className="bg-black flex items-center justify-center py-12 sm:py-16 lg:py-24">
       <section className="w-full">
         <ParallaxText baseVelocity={default_velocity} className={className || "text-7xl font-bold text-white tracking-tight"}>
           <span style={style}>

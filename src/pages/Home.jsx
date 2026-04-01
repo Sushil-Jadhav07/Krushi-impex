@@ -35,7 +35,7 @@ function Home() {
       </div>
       {/* <SparksCarousel /> */}
       {/* <LandingAccordionItem /> */}
-      <section id="who-we-serve" className="w-full px-4 sm:px-6 lg:px-8 py-8 md:py-16 bg-white">
+      <section id="who-we-serve" className="w-full px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24 bg-white">
         <FeaturesSectionWithHoverEffects />
       </section>
       <div id="quality">

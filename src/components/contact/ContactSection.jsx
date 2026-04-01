@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import emailjs from '@emailjs/browser';
 
 const ContactSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -11,6 +12,7 @@ const ContactSection = () => {
     productRequirement: '',
     estimatedQuantity: ''
   });
+  const [status, setStatus] = useState('');
   const sectionRef = useRef(null);
   const heroRef = useRef(null);
 
@@ -64,11 +66,32 @@ const ContactSection = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-    // You can add form submission logic here
+    setStatus('sending');
+
+    const templateParams = {
+      from_name: formData.fullName,
+      company_name: formData.companyName,
+      phone: formData.phone,
+      email: formData.email,
+      product_requirement: formData.productRequirement,
+      quantity: formData.estimatedQuantity,
+    };
+
+    try {
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        templateParams,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
+      setStatus('success');
+      setFormData({ fullName: '', companyName: '', phone: '', email: '', productRequirement: '', estimatedQuantity: '' });
+    } catch (error) {
+      console.error('EmailJS error:', error);
+      setStatus('error');
+    }
   };
 
   const handleWhatsApp = () => {
@@ -445,12 +468,24 @@ const ContactSection = () => {
                 />
               </div>
 
+              {status === 'success' && (
+                <div className="w-full bg-green-50 border border-green-200 text-green-700 px-4 py-3 rounded-lg text-sm font-medium">
+                  ✅ Your quote request has been sent! We'll get back to you soon.
+                </div>
+              )}
+              {status === 'error' && (
+                <div className="w-full bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg text-sm font-medium">
+                  ❌ Something went wrong. Please try again or contact us directly.
+                </div>
+              )}
+
               {/* Submit Button */}
               <button
                 type="submit"
-                 className="w-full bg-[#F16222] text-white px-6 py-3 rounded-lg font-semibold text-base hover:bg-[#D95C2F] transition-all duration-300 hover:scale-105 hover:shadow-xl transform mt-2"
+                disabled={status === 'sending'}
+                className="w-full bg-[#F16222] text-white px-6 py-3 rounded-lg font-semibold text-base hover:bg-[#D95C2F] transition-all duration-300 hover:scale-105 hover:shadow-xl transform mt-2 disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:scale-100"
               >
-                Get Quote
+                {status === 'sending' ? 'Sending...' : 'Get Quote'}
               </button>
             </form>
           </div>
@@ -462,4 +497,3 @@ const ContactSection = () => {
 };
 
 export default ContactSection;
-

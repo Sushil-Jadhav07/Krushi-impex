@@ -67,9 +67,9 @@ const PremiumCTASection = () => {
         }
       `}</style>
 
-      <section
-        ref={sectionRef}
-          className="bg-[#F4F2F2] relative w-full flex items-center justify-center px-4 py-20"
+        <section
+          ref={sectionRef}
+          className="bg-[#F4F2F2] relative w-full flex items-center justify-center px-4 py-12 sm:py-16 lg:py-24"
       >
         {/* Main Container */}
         <div className="relative w-full max-w-6xl mx-auto">
