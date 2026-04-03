@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { TrendingUp, ChevronLeft, ChevronRight } from 'lucide-react';
-import candlesImg from '../../assets/candles.png';
-import balloonsImg from '../../assets/balloons.png';
-import cakeTopperImg from '../../assets/cake-topper.png';
-import partyDecorImg from '../../assets/party-decor.png';
+
+const candlesImg = '/assets/candles.png';
+const balloonsImg = '/assets/balloons.png';
+const cakeTopperImg = '/assets/cake-topper.png';
+const partyDecorImg = '/assets/party-decor.png';
 
 const ProductsRangeSection = () => {
   const [currentSlide, setCurrentSlide] = useState(1); // Start at 1 because we have a duplicate at the beginning

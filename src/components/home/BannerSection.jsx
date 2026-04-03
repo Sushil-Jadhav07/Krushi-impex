@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { MessageCircle, FileText } from 'lucide-react';
 import { FaWhatsapp } from "react-icons/fa6";
-import bannerImage from '../../assets/krushi.png';
+
+const bannerImage = '/assets/krushi.png';
 
 const BannerSection = ({
   title = (

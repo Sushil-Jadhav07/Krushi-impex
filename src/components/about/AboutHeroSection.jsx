@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
-import aboutVideo from '../../assets/Krushi Impex Intro Reel D4.mp4';
+
+const aboutVideo = '/assets/Krushi Impex Intro Reel D4.mp4';
 
 const AboutHeroSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -43,7 +44,7 @@ const AboutHeroSection = () => {
                     src={aboutVideo}
                     className="w-full h-full object-cover"
                     autoPlay
-                    muted
+                    unmuted={true}
                     loop
                     playsInline
                     controls

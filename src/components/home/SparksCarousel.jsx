@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronRight, ChevronLeft, Package } from 'lucide-react';
-import candlesImg from '../../assets/candles.png';
-import balloonsImg from '../../assets/balloons.png';
-import cakeTopperImg from '../../assets/cake-topper.png';
-import partyDecorImg from '../../assets/decoration-items.webp';
-import partyPropsImg from '../../assets/Led-glasses.jpg';
-import festivalSuppliesImg from '../../assets/flat-lay-with.jpg';
-import eventAccessoriesImg from '../../assets/party-decor.jpg';
-import celebrationLightsImg from '../../assets/Lightings.jpg';
-import partyFavorsImg from '../../assets/party-items1.jpg';
+
+const candlesImg = '/assets/candles.png';
+const balloonsImg = '/assets/balloons.png';
+const cakeTopperImg = '/assets/cake-topper.png';
+const partyDecorImg = '/assets/decoration-items.webp';
+const partyPropsImg = '/assets/Led-glasses.jpg';
+const festivalSuppliesImg = '/assets/flat-lay-with.jpg';
+const eventAccessoriesImg = '/assets/party-decor.jpg';
+const celebrationLightsImg = '/assets/Lightings.jpg';
+const partyFavorsImg = '/assets/party-items1.jpg';
 
 
 // Sample data for Sparks Carousel
