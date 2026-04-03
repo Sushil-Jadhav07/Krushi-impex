@@ -148,7 +148,7 @@ const ValueCard = ({ icon: Icon, title, description, index }) => {
 const AboutValuesSection = ({
   mainHeading = "WHAT WE DO?",
   ctaText = "Get Started",
-  ctaHref = "#contact",
+  ctaHref = "/contact",
   values = [
     {
       icon: Globe,

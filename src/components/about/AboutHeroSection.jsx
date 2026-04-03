@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import aboutImg from '../../assets/about-img.png';
+import aboutVideo from '../../assets/Krushi Impex Intro Reel D4.mp4';
 
 const AboutHeroSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -26,28 +26,31 @@ const AboutHeroSection = () => {
     };
   }, []);
 
-  const handleWatchVideo = () => {
-    // Add video functionality here
-    console.log('Watch video clicked');
-  };
-
   return (
     <section 
       ref={sectionRef}
       className="w-full pt-20 md:pt-24 pb-12 md:pb-24 px-4 sm:px-6 lg:px-8 bg-gray-50"
     >
-      <div className="max-w-7xl mx-auto py-12 md:py-24">
+      <div className="max-w-7xl mx-auto py-12 md:py-12">
         <div className="relative">
           {/* Main Content Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-0 items-center">
-            {/* Left Section - Image */}
-            <div className="relative order-2 lg:order-1 h-[400px] md:h-[500px] ">
-              <div className="relative w-full h-full rounded-lg overflow-hidden">
-                <img
-                  src={aboutImg}
-                  alt="Krushi Impex"
-                  className="w-full h-full object-cover"
-                />
+            {/* Left Section - Video */}
+            <div className="relative order-2 lg:order-1">
+              <div className="relative mx-auto w-full max-w-full sm:max-w-[320px] md:max-w-[360px] lg:ml-[150px] lg:mr-auto">
+                <div className="relative w-full overflow-hidden rounded-[28px] shadow-xl aspect-[9/16] bg-black">
+                  <video
+                    src={aboutVideo}
+                    className="w-full h-full object-cover"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    controls
+                  >
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
 
                 {/* Watch Video Button - Bottom Left */}
                 {/* <div 
