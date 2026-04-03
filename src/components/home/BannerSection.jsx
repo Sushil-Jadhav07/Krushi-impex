@@ -82,7 +82,7 @@ const BannerSection = ({
               </h1>
               
               {/* Services Line */}
-              <p 
+              {/* <p 
                 className={`text-base md:text-xl  text-white/95 font-semibold mb-4 sm:mb-6 transition-all duration-700 ease-out ${
                   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
                 }`}
@@ -92,7 +92,7 @@ const BannerSection = ({
                 }}
               >
                 {services}
-              </p>
+              </p> */}
 
               {/* Description */}
               <p 

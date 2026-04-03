@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import aboutImg from '../../assets/about-img.png';
 
 const AboutHeroSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -40,24 +41,16 @@ const AboutHeroSection = () => {
           {/* Main Content Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-0 items-center">
             {/* Left Section - Image */}
-            <div className="relative order-2 lg:order-1 h-[400px] md:h-[500px] lg:h-[600px]">
+            <div className="relative order-2 lg:order-1 h-[400px] md:h-[500px] ">
               <div className="relative w-full h-full rounded-lg overflow-hidden">
-                {/* Placeholder Image with gradient */}
-                 <div className="absolute inset-0 bg-gradient-to-br from-[#2C328C] via-[#2C328C] to-[#2C328C] opacity-10">
-                  <div className="w-full h-full flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="w-32 h-32 md:w-40 md:h-40 mx-auto mb-4 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm border border-white/20">
-                        <svg className="w-16 h-16 md:w-20 md:h-20 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                        </svg>
-                      </div>
-                      <p className="text-white/80 text-sm md:text-base font-light">Company Image</p>
-                    </div>
-                  </div>
-                </div>
+                <img
+                  src={aboutImg}
+                  alt="Krushi Impex"
+                  className="w-full h-full object-cover"
+                />
 
                 {/* Watch Video Button - Bottom Left */}
-                <div 
+                {/* <div 
                   className="absolute bottom-6 left-6 flex items-center gap-3 z-10"
                   style={{
                     opacity: isVisible ? 1 : 0,
@@ -76,7 +69,7 @@ const AboutHeroSection = () => {
                   <span className="text-black font-semibold text-sm md:text-base uppercase tracking-wide">
                     WATCH VIDEO
                   </span>
-                </div>
+                </div> */}
               </div>
             </div>
 
@@ -150,4 +143,3 @@ const AboutHeroSection = () => {
 };
 
 export default AboutHeroSection;
-
