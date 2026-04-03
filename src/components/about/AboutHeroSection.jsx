@@ -129,9 +129,9 @@ const AboutHeroSection = () => {
                     transition: 'all 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.6s'
                   }}
                 >
-                  <button className="bg-black text-white px-8 py-3 md:py-4 font-semibold text-sm md:text-base uppercase tracking-wide hover:bg-gray-800 transition-all duration-300 hover:scale-105">
+                  {/* <button className="bg-black text-white px-8 py-3 md:py-4 font-semibold text-sm md:text-base uppercase tracking-wide hover:bg-gray-800 transition-all duration-300 hover:scale-105">
                     READ MORE
-                  </button>
+                  </button> */}
                  </div>
                </div>
              </div>
