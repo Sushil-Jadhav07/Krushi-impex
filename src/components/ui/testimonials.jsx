@@ -7,48 +7,56 @@ const Testimonials = () => {
 
   const testimonials = [
     {
+      title: "Best Decision",
       quote: "Krushi Impex has completely transformed the way we manage our celebration product inventory. The quality and pricing are unbeatable.",
       name: "Rajesh Kumar",
       company: "Kumar Wholesale",
       avatar: "RK"
     },
     {
+      title: "Great Service",
       quote: "The collaboration and support from Krushi Impex have significantly improved our product offerings. We're serving our customers better with quality celebration supplies.",
       name: "Priya Sharma",
       company: "Sharma Party Supplies",
       avatar: "PS"
     },
     {
+      title: "Quality Products",
       quote: "Krushi Impex has been our trusted partner for celebration products. The quality-checked products have made decision-making so much easier for our business.",
       name: "Amit Patel",
       company: "Patel Event Solutions",
       avatar: "AP"
     },
     {
+      title: "Very Reliable",
       quote: "Working with Krushi Impex has been a game-changer. Their ready inventory in India and competitive pricing have helped us maintain healthy margins.",
       name: "Sneha Reddy",
       company: "Reddy Celebration Store",
       avatar: "SR"
     },
     {
+      title: "Definitely Recommend",
       quote: "The quality-checked products and fast Pan-India delivery from Krushi Impex have transformed our business. We're now able to fulfill orders faster.",
       name: "Vikram Singh",
       company: "Singh B2B Solutions",
       avatar: "VS"
     },
     {
+      title: "Best Decision",
       quote: "Best decision we made was partnering with Krushi Impex. Their direct sourcing from China and quality assurance has elevated our business.",
       name: "Anjali Mehta",
       company: "Mehta Party World",
       avatar: "AM"
     },
     {
+      title: "Great Service",
       quote: "Krushi Impex's ready inventory and fast delivery have made our operations seamless. We can now serve our customers better and faster.",
       name: "Rohit Verma",
       company: "Verma Events",
       avatar: "RV"
     },
     {
+      title: "Quality Products",
       quote: "The competitive pricing and quality products from Krushi Impex have helped us grow our business significantly. Highly recommended!",
       name: "Kavita Nair",
       company: "Nair Celebration Hub",
@@ -159,7 +167,7 @@ const Testimonials = () => {
                         className="text-xl md:text-2xl font-bold text-black mb-3"
                         style={{ fontFamily: 'Conthrax, sans-serif' }}
                       >
-                        Best Decision
+                        {testimonial.title}
                       </h3>
                       
                       {/* Quote */}
