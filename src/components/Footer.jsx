@@ -10,7 +10,7 @@ function Footer({ onWhatsAppClick }) {
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#2C328C] via-[#F16222] to-[#2C328C]"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-8 mb-16 lg:justify-items-center">
           
           {/* Brand Column */}
           <div className="space-y-6">
@@ -76,7 +76,7 @@ function Footer({ onWhatsAppClick }) {
           </div>
 
           {/* Newsletter */}
-          <div>
+          {/* <div>
             <h4 className="text-lg font-semibold mb-6 text-white tracking-wide" style={{ fontFamily: 'Conthrax, sans-serif' }}>Stay Updated</h4>
             <p className="text-gray-400 text-sm mb-4 leading-relaxed" style={{ fontFamily: 'Montserrat, sans-serif' }}>
               Subscribe to get the latest updates on trending products and new arrivals.
@@ -92,7 +92,7 @@ function Footer({ onWhatsAppClick }) {
                 JOIN
               </button>
             </div>
-          </div>
+          </div> */}
 
         </div>
 
