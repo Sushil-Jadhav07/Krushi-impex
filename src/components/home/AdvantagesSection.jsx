@@ -90,7 +90,7 @@ const AdvantagesSection = ({
       icon: Wind
     },
     {
-      title: "Durability checks for décor items",
+      title: "Durability checks for decor items",
       description: "All decorative items are tested for durability, material quality, and structural integrity to ensure they withstand normal use and handling.",
       icon: ShieldCheck
     }
